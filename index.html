@@ -2,31 +2,1364 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="robots" content="noindex">
-    <title>CenSync</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Primary Meta Tags -->
+    <title>CenSync - Blockchain & Distributed Systems Development</title>
+    <meta name="title" content="CenSync - Blockchain & Distributed Systems Development">
+    <meta name="description"
+          content="Expert development of distributed systems, blockchain solutions, DEX/CEX platforms, crosschain bridges, and fintech applications. Professional algorithmic trading systems and enterprise blockchain infrastructure.">
+    <meta name="keywords"
+          content="blockchain development, distributed systems, DEX development, CEX platform, crosschain bridges, fintech applications, algorithmic trading, smart contracts, blockchain infrastructure, DeFi solutions">
+    <meta name="author" content="CenSync">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://censync.com/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://censync.com/">
+    <meta property="og:title" content="CenSync - Blockchain & Distributed Systems Development">
+    <meta property="og:description"
+          content="Expert development of distributed systems, blockchain solutions, and fintech applications. Building the future of decentralized systems.">
+    <meta property="og:image" content="https://censync.com/og-image.png">
+    <meta property="og:site_name" content="CenSync">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://censync.com/">
+    <meta property="twitter:title" content="CenSync - Blockchain & Distributed Systems Development">
+    <meta property="twitter:description"
+          content="Expert development of distributed systems, blockchain solutions, and fintech applications. Building the future of decentralized systems.">
+    <meta property="twitter:image" content="https://censync.com/og-image.png">
+
+    <!-- Additional Meta Tags -->
+    <meta name="theme-color" content="#ffd200">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+
+    <!-- Favicon & Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" type="image/svg+xml"
+          href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='75' font-size='80'%3E⚡%3C/text%3E%3C/svg%3E">
+    <link rel="apple-touch-icon" href="/icon-192.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Inline Styles -->
     <style>
-        body {
-            background: #B0B0B0;
-            font-family: "circular", Arial, "Helvetica Neue", Helvetica, sans-serif;
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --dark-gradient: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            --gold-gradient: linear-gradient(135deg, #f7971e 0%, #ffd200 100%);
+            --animation-speed: 0.3s
         }
 
-        p {
-            font-weight: lighter;
-            text-align: center;
-            text-transform: uppercase;
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            overflow-x: hidden;
+            min-height: 100vh;
+            line-height: 1.8;
+            font-weight: 300;
+            letter-spacing: -0.01em
+        }
+
+        .navbar {
+            transition: all var(--animation-speed) ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 100
+        }
+
+        .navbar-burger {
+            height: 3.25rem;
+            width: 3.25rem
+        }
+
+        .navbar-item {
+            font-weight: 400;
+            letter-spacing: 0.01em;
+            transition: color var(--animation-speed) ease
+        }
+
+        .navbar-item:hover {
+            color: #ffd200 !important
+        }
+
+        .navbar-menu {
+            box-shadow: none
+        }
+
+        @media screen and (max-width: 1023px) {
+            .navbar-menu {
+                background-color: #1a1a2e
+            }
+
+            .navbar-item {
+                color: #fff !important
+            }
+        }
+
+        .hero-gradient {
+            background: var(--dark-gradient);
+            position: relative;
+            overflow: hidden
+        }
+
+        .hero-gradient::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(102, 126, 234, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(247, 151, 30, 0.1) 0%, transparent 50%);
+            animation: gradientShift 10s ease infinite
+        }
+
+        @keyframes gradientShift {
+            0%, 100% {
+                opacity: 1
+            }
+            50% {
+                opacity: 0.8
+            }
+        }
+
+        .hero-body {
+            position: relative;
+            z-index: 1
+        }
+
+        .floating-icons {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            opacity: 0.1
+        }
+
+        .floating-icon {
+            position: absolute;
+            font-size: 3rem;
+            color: #ffd200;
+            animation: float 6s ease-in-out infinite
+        }
+
+        .floating-icon:nth-child(1) {
+            animation-delay: 0s
+        }
+
+        .floating-icon:nth-child(2) {
+            animation-delay: 1.5s
+        }
+
+        .floating-icon:nth-child(3) {
+            animation-delay: 3s
+        }
+
+        .floating-icon:nth-child(4) {
+            animation-delay: 4.5s
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px)
+            }
+            50% {
+                transform: translateY(-20px)
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out
+        }
+
+        .fade-in-delay {
+            animation: fadeIn 1s ease-out 0.3s both
+        }
+
+        .fade-in-delay-2 {
+            animation: fadeIn 1s ease-out 0.6s both
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px)
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+
+        .bounce {
+            display: inline-block;
+            animation: bounce 2s infinite
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0)
+            }
+            40% {
+                transform: translateY(-10px)
+            }
+            60% {
+                transform: translateY(-5px)
+            }
+        }
+
+        .service-card {
+            height: 100%;
+            transition: all var(--animation-speed) ease;
+            border: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2)
+        }
+
+        .service-icon {
+            transition: transform var(--animation-speed) ease
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1)
+        }
+
+        @media screen and (max-width: 768px) {
+            .service-card {
+                margin-bottom: 1rem
+            }
+
+            .service-card:hover {
+                transform: none
+            }
+        }
+
+        .solution-box {
+            height: 100%;
+            transition: all var(--animation-speed) ease;
+            border-left: 4px solid transparent;
+            border-radius: 6px
+        }
+
+        .solution-box:hover {
+            border-left-color: #ffd200;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15)
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0
+        }
+
+        .feature-list li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem
+        }
+
+        @media screen and (max-width: 768px) {
+            .solution-box {
+                margin-bottom: 1rem
+            }
+
+            .solution-box:hover {
+                transform: none
+            }
+        }
+
+        .tech-card {
+            height: 100%;
+            transition: all var(--animation-speed) ease;
+            border-radius: 8px
+        }
+
+        .tech-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15)
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center
+        }
+
+        .tech-tags .tag {
+            border: 1px solid #ddd;
+            font-weight: 400
+        }
+
+        @media screen and (max-width: 768px) {
+            .tech-card {
+                margin-bottom: 1rem
+            }
+
+            .tech-card:hover {
+                transform: none
+            }
+        }
+
+        .stat-item {
+            padding: 2rem 0
+        }
+
+        .stat-number {
+            font-weight: 200;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em
+        }
+
+        .contact-box {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border-radius: 8px
+        }
+
+        .contact-item {
+            font-size: 1.1rem;
+            font-weight: 300
+        }
+
+        .icon-text {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem
+        }
+
+        #contactForm .input, #contactForm .textarea {
+            border: 2px solid #e8e8e8;
+            transition: all var(--animation-speed) ease;
+            width: 100%
+        }
+
+        #contactForm .input:focus, #contactForm .textarea:focus {
+            border-color: #ffd200;
+            box-shadow: 0 0 0 0.125em rgba(255, 210, 0, 0.25);
+            outline: none
+        }
+
+        @media screen and (max-width: 768px) {
+            .contact-item {
+                font-size: 1rem;
+                margin-bottom: 1rem
+            }
+        }
+
+        .footer {
+            padding: 4rem 1.5rem 2rem
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem
+        }
+
+        .footer-links a {
+            color: #b0b0b0;
+            transition: color var(--animation-speed) ease;
+            font-weight: 300
+        }
+
+        .footer-links a:hover {
+            color: #ffd200
+        }
+
+        .social-links {
+            display: flex;
+            gap: 0.75rem
+        }
+
+        .social-links .button:hover {
+            background: #ffd200;
+            color: #1a1a2e
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: #ffd200;
+            color: #1a1a2e;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            visibility: hidden;
+            transition: all var(--animation-speed) ease;
+            z-index: 1000
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible
+        }
+
+        .back-to-top:hover {
+            background: #f7971e;
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4)
+        }
+
+        @media screen and (max-width: 1023px) {
+            .section.is-medium {
+                padding: 3rem 1.5rem
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .hero.is-fullheight {
+                min-height: 100vh;
+                padding-top: 3.25rem
+            }
+
+            .hero-body {
+                padding: 3rem 1.5rem
+            }
+
+            .title.is-1 {
+                font-size: 2rem !important;
+                line-height: 1.2
+            }
+
+            .subtitle {
+                font-size: 1.1rem !important
+            }
+
+            .floating-icons {
+                display: none
+            }
+
+            .stat-item {
+                padding: 1rem 0
+            }
+
+            .stat-number {
+                font-size: 2rem !important
+            }
+
+            .back-to-top {
+                bottom: 1rem;
+                right: 1rem;
+                width: 40px;
+                height: 40px;
+                font-size: 1rem
+            }
+
+            .buttons {
+                flex-direction: column
+            }
+
+            .buttons .button {
+                width: 100%
+            }
+
+            .section {
+                padding: 2rem 1rem
+            }
+
+            .py-6-mobile {
+                padding-top: 2rem !important;
+                padding-bottom: 2rem !important
+            }
+
+            .px-4-mobile {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important
+            }
+
+            .mb-5-mobile {
+                margin-bottom: 1.5rem !important
+            }
+
+            .mb-3-mobile {
+                margin-bottom: 1rem !important
+            }
+
+            .mb-2-mobile {
+                margin-bottom: 0.5rem !important
+            }
+
+            .mt-5-mobile {
+                margin-top: 1.5rem !important
+            }
+
+            .has-text-centered-mobile {
+                text-align: center !important
+            }
+
+            .is-fullwidth-mobile {
+                width: 100% !important;
+                display: block !important
+            }
+
+            .is-justify-content-center-mobile {
+                justify-content: center !important
+            }
+
+            .is-flex-wrap-wrap {
+                flex-wrap: wrap !important
+            }
+
+            .is-flex-direction-column-mobile {
+                flex-direction: column !important
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .title.is-1 {
+                font-size: 1.75rem !important
+            }
+
+            .button.is-large {
+                font-size: 1rem;
+                padding: 0.75rem 1rem
+            }
+
+            .hero-body {
+                padding: 2rem 1rem
+            }
+        }
+
+        .has-gradient-text {
+            background: var(--gold-gradient);
+            background: -webkit-linear-gradient(135deg, #f7971e 0%, #ffd200 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 300
+        }
+
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3)
+        }
+
+        .title {
+            font-weight: 300;
+            letter-spacing: -0.02em
+        }
+
+        .title.is-1 {
+            font-weight: 200;
+            letter-spacing: -0.03em
+        }
+
+        .subtitle {
+            font-weight: 300;
+            letter-spacing: 0.01em
+        }
+
+        .has-text-weight-bold {
+            font-weight: 500 !important
+        }
+
+        .is-flex {
+            display: flex !important
+        }
+
+        .is-align-items-center {
+            align-items: center !important
+        }
+
+        .is-justify-content-center {
+            justify-content: center !important
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+                transform: scale(1)
+            }
+            50% {
+                opacity: 0.8;
+                transform: scale(1.05)
+            }
+        }
+
+        .pulse {
+            animation: pulse 2s ease-in-out infinite
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 5px
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555
+        }
+
+        @media print {
+            .navbar, .back-to-top, #contactForm {
+                display: none
+            }
         }
     </style>
 </head>
-<body>
-<noindex>
-    <p>
-        Development | Secure | Opensource
-        <br/><br/>
-        Blockchain | DEX | WEB3
-        <br/>
-        <br/>
-        [ <a href="https://soikawallet.app">Soika Wallet</a> ] [ <a href="https://github.com/censync/">GitHub</a> ]
-    </p>
-</noindex>
+<body itemscope itemtype="https://schema.org/WebPage">
+<!-- Navigation -->
+<nav class="navbar is-fixed-top is-dark" role="navigation" aria-label="main navigation">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="#home">
+                    <span class="icon-text">
+                        <span class="icon has-text-warning">
+                            <i class="fas fa-bolt"></i>
+                        </span>
+                        <span class="has-text-weight-bold is-size-4">CenSync</span>
+                    </span>
+            </a>
+
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarMenu" class="navbar-menu">
+            <div class="navbar-end">
+                <a class="navbar-item" href="#home">Home</a>
+                <a class="navbar-item" href="#services">Services</a>
+                <a class="navbar-item" href="#solutions">Solutions</a>
+                <a class="navbar-item" href="#technologies">Technologies</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Services Section -->
+<section id="services" class="section is-medium py-6-mobile">
+    <div class="container">
+        <div class="has-text-centered mb-6 px-4-mobile">
+            <h2 class="title is-2 has-text-weight-bold is-size-3-mobile">CenSync</h2>
+            <p class="subtitle is-5 has-text-grey is-size-6-mobile">Comprehensive blockchain and distributed systems
+                development</p>
+        </div>
+
+        <div class="columns is-multiline is-variable is-6-desktop is-4-tablet is-3-mobile">
+            <!-- Distributed Systems -->
+            <div class="column is-12-mobile is-6-tablet is-4-desktop">
+                <article class="card service-card" itemscope itemtype="https://schema.org/Service">
+                    <div class="card-content">
+                        <div class="service-icon has-text-centered mb-4">
+                                <span class="icon is-large has-text-info">
+                                    <i class="fas fa-network-wired fa-3x"></i>
+                                </span>
+                        </div>
+                        <h3 class="title is-4 has-text-centered is-size-5-mobile" itemprop="name">Distributed
+                            Systems</h3>
+                        <p class="has-text-grey is-size-6-mobile" itemprop="description">
+                            High-performance, scalable distributed architectures designed for resilience and efficiency.
+                            We build systems that handle millions of transactions with zero downtime.
+                        </p>
+                        <div class="tags mt-4 is-justify-content-center">
+                            <span class="tag is-info">Scalability</span>
+                            <span class="tag is-info">Resilience</span>
+                            <span class="tag is-info">Performance</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Blockchain Solutions -->
+            <div class="column is-12-mobile is-6-tablet is-4-desktop">
+                <article class="card service-card" itemscope itemtype="https://schema.org/Service">
+                    <div class="card-content">
+                        <div class="service-icon has-text-centered mb-4">
+                                <span class="icon is-large has-text-warning">
+                                    <i class="fas fa-cube fa-3x"></i>
+                                </span>
+                        </div>
+                        <h3 class="title is-4 has-text-centered is-size-5-mobile" itemprop="name">Blockchain
+                            Solutions</h3>
+                        <p class="has-text-grey is-size-6-mobile" itemprop="description">
+                            Secured blockchain infrastructure including nodes, cross-chain bridges, and custom
+                            protocols.
+                            Enterprise-grade security for your decentralized applications.
+                        </p>
+                        <div class="tags mt-4 is-justify-content-center">
+                            <span class="tag is-warning is-light">Nodes</span>
+                            <span class="tag is-warning is-light">Cross-chain</span>
+                            <span class="tag is-warning is-light">Security</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Fintech Development -->
+            <div class="column is-12-mobile is-6-tablet is-4-desktop">
+                <article class="card service-card" itemscope itemtype="https://schema.org/Service">
+                    <div class="card-content">
+                        <div class="service-icon has-text-centered mb-4">
+                                <span class="icon is-large has-text-success">
+                                    <i class="fas fa-chart-line fa-3x"></i>
+                                </span>
+                        </div>
+                        <h3 class="title is-4 has-text-centered is-size-5-mobile" itemprop="name">Fintech Solutions</h3>
+                        <p class="has-text-grey is-size-6-mobile" itemprop="description">
+                            Advanced algorithmic trading systems, market data pipelines, and financial infrastructure.
+                            Built for speed, accuracy, and regulatory compliance.
+                        </p>
+                        <div class="tags mt-4 is-justify-content-center">
+                            <span class="tag is-success is-light">Algo Trading</span>
+                            <span class="tag is-success is-light">ETL</span>
+                            <span class="tag is-success is-light">Analytics</span>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+
+<!-- Solutions Section -->
+<section id="solutions" class="section is-medium has-background-dark  py-6-mobile">
+    <div class="container">
+        <div class="has-text-centered mb-6 px-4-mobile">
+            <h2 class="title is-2 has-text-weight-bold is-size-3-mobile">Specialized Solutions</h2>
+            <p class="subtitle is-5 has-text-grey is-size-6-mobile">Industry-leading implementations for modern
+                financial infrastructure</p>
+        </div>
+
+        <div class="columns is-multiline is-variable is-6-desktop is-4-tablet is-3-mobile">
+            <!-- DEX Development -->
+            <div class="column is-12-mobile is-12-tablet is-6-desktop">
+                <div class="box solution-box">
+                    <div class="media is-flex-direction-column-mobile">
+                        <div class="media-left has-text-centered-mobile mb-3-mobile">
+                                <span class="icon is-large has-text-primary">
+                                    <i class="fas fa-exchange-alt fa-2x"></i>
+                                </span>
+                        </div>
+                        <div class="media-content">
+                            <h3 class="title is-4 has-text-centered-mobile is-size-5-mobile">DEX (Decentralized
+                                Exchange)</h3>
+                            <p class="has-text-grey">
+                                Custom decentralized exchange platforms with advanced AMM algorithms, liquidity pools,
+                                and order book systems. Ultra-low latency trading with institutional-grade security.
+                            </p>
+                            <div class="content mt-3">
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check has-text-success"></i> Automated Market Makers (AMM)</li>
+                                    <li><i class="fas fa-check has-text-success"></i> Liquidity Pool Management</li>
+                                    <li><i class="fas fa-check has-text-success"></i> Multi-chain Support</li>
+                                    <li><i class="fas fa-check has-text-success"></i> Smart Contract Auditing</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CEX Infrastructure -->
+            <div class="column is-12-mobile is-12-tablet is-6-desktop">
+                <div class="box solution-box">
+                    <div class="media is-flex-direction-column-mobile">
+                        <div class="media-left has-text-centered-mobile mb-3-mobile">
+                                <span class="icon is-large has-text-link">
+                                    <i class="fas fa-server fa-2x"></i>
+                                </span>
+                        </div>
+                        <div class="media-content">
+                            <h3 class="title is-4 has-text-centered-mobile is-size-5-mobile">CEX (Centralized
+                                Exchange)</h3>
+                            <p class="has-text-grey">
+                                High-performance centralized exchange infrastructure with matching engines,
+                                custody solutions, and compliance frameworks. Handle millions of orders per second.
+                            </p>
+                            <div class="content mt-3">
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check has-text-success"></i> Matching Engine (100k+ TPS)</li>
+                                    <li><i class="fas fa-check has-text-success"></i> Cold & Hot Wallet Systems</li>
+                                    <li><i class="fas fa-check has-text-success"></i> KYC/AML Integration</li>
+                                    <li><i class="fas fa-check has-text-success"></i> Real-time Risk Management</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cross-chain Bridges -->
+            <div class="column is-12-mobile is-12-tablet is-6-desktop">
+                <div class="box solution-box">
+                    <div class="media is-flex-direction-column-mobile">
+                        <div class="media-left has-text-centered-mobile mb-3-mobile">
+                                <span class="icon is-large has-text-warning">
+                                    <i class="fas fa-code-branch fa-2x"></i>
+                                </span>
+                        </div>
+                        <div class="media-content">
+                            <h3 class="title is-4 has-text-centered-mobile is-size-5-mobile">Cross-chain Solutions</h3>
+                            <p class="has-text-grey">
+                                Secure bridges connecting multiple blockchain networks. Enable seamless asset transfers
+                                with cryptographic verification and fraud prevention mechanisms.
+                            </p>
+                            <div class="content mt-3">
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check has-text-success"></i> Multi-sig Validation</li>
+                                    <li><i class="fas fa-check has-text-success"></i> Trustless Transfers</li>
+                                    <li><i class="fas fa-check has-text-success"></i> EVM & Non-EVM Chains</li>
+                                    <li><i class="fas fa-check has-text-success"></i> Atomic Swaps</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ETL & Data Pipelines -->
+            <div class="column is-12-mobile is-12-tablet is-6-desktop">
+                <div class="box solution-box">
+                    <div class="media is-flex-direction-column-mobile">
+                        <div class="media-left has-text-centered-mobile mb-3-mobile">
+                                <span class="icon is-large has-text-info">
+                                    <i class="fas fa-database fa-2x"></i>
+                                </span>
+                        </div>
+                        <div class="media-content">
+                            <h3 class="title is-4 has-text-centered-mobile is-size-5-mobile">ETL & Data Engineering</h3>
+                            <p class="has-text-grey">
+                                Enterprise-scale data pipelines processing billions of events. Real-time analytics,
+                                blockchain indexing, and market data aggregation systems.
+                            </p>
+                            <div class="content mt-3">
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check has-text-success"></i> Real-time Streaming</li>
+                                    <li><i class="fas fa-check has-text-success"></i> Blockchain Indexing</li>
+                                    <li><i class="fas fa-check has-text-success"></i> Data Lake Architecture</li>
+                                    <li><i class="fas fa-check has-text-success"></i> Machine Learning Ready</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Technologies Section -->
+<section id="technologies" class="section is-medium py-6-mobile">
+    <div class="container">
+        <div class="has-text-centered mb-6 px-4-mobile">
+            <h2 class="title is-2 has-text-weight-bold is-size-3-mobile">Technology Stack</h2>
+            <p class="subtitle is-5 has-text-grey is-size-6-mobile">Cutting-edge tools and frameworks powering our
+                solutions</p>
+        </div>
+
+        <div class="columns is-multiline is-variable is-5-desktop is-3-tablet is-2-mobile">
+            <!-- Blockchain -->
+            <div class="column is-12-mobile is-6-tablet is-4-desktop">
+                <div class="card tech-card">
+                    <div class="card-content">
+                        <h3 class="title is-5 has-text-centered mb-4 is-size-6-mobile">
+                                <span class="icon has-text-warning">
+                                    <i class="fas fa-cubes"></i>
+                                </span>
+                            Blockchain
+                        </h3>
+                        <div class="tech-tags is-justify-content-center">
+                            <span class="tag is-medium">Ethereum</span>
+                            <span class="tag is-medium">Solana</span>
+                            <span class="tag is-medium">Polkadot</span>
+                            <span class="tag is-medium">Cosmos</span>
+                            <span class="tag is-medium">Bitcoin</span>
+                            <span class="tag is-medium">BSC</span>
+                            <span class="tag is-medium">Avalanche</span>
+                            <span class="tag is-medium">Polygon</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Languages -->
+            <div class="column is-12-mobile is-6-tablet is-4-desktop">
+                <div class="card tech-card">
+                    <div class="card-content">
+                        <h3 class="title is-5 has-text-centered mb-4 is-size-6-mobile">
+                                <span class="icon has-text-info">
+                                    <i class="fas fa-code"></i>
+                                </span>
+                            Languages
+                        </h3>
+                        <div class="tech-tags is-justify-content-center">
+                            <span class="tag is-medium">Rust</span>
+                            <span class="tag is-medium">Go</span>
+                            <span class="tag is-medium">Solidity</span>
+                            <span class="tag is-medium">TypeScript</span>
+                            <span class="tag is-medium">Python</span>
+                            <span class="tag is-medium">C++</span>
+                            <span class="tag is-medium">Java</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Infrastructure -->
+            <div class="column is-12-mobile is-6-tablet is-4-desktop">
+                <div class="card tech-card">
+                    <div class="card-content">
+                        <h3 class="title is-5 has-text-centered mb-4 is-size-6-mobile">
+                                <span class="icon has-text-success">
+                                    <i class="fas fa-server"></i>
+                                </span>
+                            Infrastructure
+                        </h3>
+                        <div class="tech-tags is-justify-content-center">
+                            <span class="tag is-medium">Kubernetes</span>
+                            <span class="tag is-medium">Docker</span>
+                            <span class="tag is-medium">AWS</span>
+                            <span class="tag is-medium">GCP</span>
+                            <span class="tag is-medium">Terraform</span>
+                            <span class="tag is-medium">Ansible</span>
+                            <span class="tag is-medium">IPFS</span>
+                            <span class="tag is-medium">Redis</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Data & Streaming -->
+            <div class="column is-12-mobile is-6-tablet is-4-desktop">
+                <div class="card tech-card">
+                    <div class="card-content">
+                        <h3 class="title is-5 has-text-centered mb-4 is-size-6-mobile">
+                                <span class="icon has-text-link">
+                                    <i class="fas fa-stream"></i>
+                                </span>
+                            Data & Streaming
+                        </h3>
+                        <div class="tech-tags is-justify-content-center">
+                            <span class="tag is-medium">NATS</span>
+                            <span class="tag is-medium">PostgreSQL</span>
+                            <span class="tag is-medium">MongoDB</span>
+                            <span class="tag is-medium">ClickHouse</span>
+                            <span class="tag is-medium">NSQ</span>
+                            <span class="tag is-medium">Cassandra</span>
+                            <span class="tag is-medium">ScyllaDB</span>
+                            <span class="tag is-medium">Kafka</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Smart Contracts -->
+            <div class="column is-12-mobile is-6-tablet is-4-desktop">
+                <div class="card tech-card">
+                    <div class="card-content">
+                        <h3 class="title is-5 has-text-centered mb-4 is-size-6-mobile">
+                                <span class="icon has-text-danger">
+                                    <i class="fas fa-file-contract"></i>
+                                </span>
+                            Smart Contracts
+                        </h3>
+                        <div class="tech-tags is-justify-content-center">
+                            <span class="tag is-medium">Hardhat</span>
+                            <span class="tag is-medium">Foundry</span>
+                            <span class="tag is-medium">Truffle</span>
+                            <span class="tag is-medium">OpenZeppelin</span>
+                            <span class="tag is-medium">Web3.js</span>
+                            <span class="tag is-medium">ethers.js</span>
+                            <span class="tag is-medium">Anchor</span>
+                            <span class="tag is-medium">CosmWasm</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Security -->
+            <div class="column is-12-mobile is-6-tablet is-4-desktop">
+                <div class="card tech-card">
+                    <div class="card-content">
+                        <h3 class="title is-5 has-text-centered mb-4 is-size-6-mobile">
+                                <span class="icon has-text-primary">
+                                    <i class="fas fa-shield-alt"></i>
+                                </span>
+                            Security
+                        </h3>
+                        <div class="tech-tags is-justify-content-center">
+                            <span class="tag is-medium">Slither</span>
+                            <span class="tag is-medium">Mythril</span>
+                            <span class="tag is-medium">OpenSSL</span>
+                            <span class="tag is-medium">HashiCorp Vault</span>
+                            <span class="tag is-medium">MPC</span>
+                            <span class="tag is-medium">AirGap</span>
+                            <span class="tag is-medium">ZK-SNARK</span>
+                            <span class="tag is-medium">TEE</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Footer -->
+<footer class="footer has-background-dark has-text-light">
+    <div class="container">
+        <div class="columns is-multiline">
+            <div class="column is-12-mobile is-12-tablet is-4-desktop has-text-centered-mobile mb-5-mobile">
+                <h3 class="title is-5 has-text-light mb-3">
+                        <span class="icon-text">
+                            <span class="icon has-text-warning">
+                                <i class="fas fa-bolt"></i>
+                            </span>
+                            <span>CenSync</span>
+                        </span>
+                </h3>
+                <p class="has-text-grey-light">
+                    Expert developers of distributed systems, secured blockchain solutions, and cutting-edge fintech
+                    applications.
+                </p>
+            </div>
+
+            <div class="column is-12-mobile is-6-tablet is-4-desktop has-text-centered-mobile mb-5-mobile">
+                <h4 class="title is-6 has-text-light mb-3">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#solutions">Solutions</a></li>
+                    <li><a href="#technologies">Technologies</a></li>
+                </ul>
+            </div>
+
+            <div class="column is-12-mobile is-6-tablet is-4-desktop has-text-centered-mobile mb-5-mobile">
+                <h4 class="title is-6 has-text-light mb-3">Connect</h4>
+                <div class="social-links is-justify-content-center-mobile">
+                    <a href="https://github.com/censync" class="button is-dark is-small" target="_blank" rel="noopener">
+                            <span class="icon">
+                                <i class="fab fa-github"></i>
+                            </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <hr class="has-background-grey-dark">
+
+        <div class="content has-text-centered has-text-grey-light">
+            <p>
+                © 2026 CenSync. Building the future of decentralized systems.
+            </p>
+        </div>
+    </div>
+</footer>
+
+<!-- Back to Top Button -->
+<a href="#home" id="backToTop" class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+</a>
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "CenSync",
+        "url": "https://censync.com",
+        "logo": "https://censync.com/logo.png",
+        "description": "Expert development of distributed systems, blockchain solutions, DEX/CEX platforms, crosschain bridges, and fintech applications.",
+        "email": "contact@censync.com",
+        "sameAs": [],
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "Global"
+        },
+        "foundingDate": "2024",
+        "knowsAbout": [
+            "Blockchain Development",
+            "Distributed Systems",
+            "DEX Development",
+            "CEX Development",
+            "Crosschain Bridges",
+            "Smart Contracts",
+            "Algorithmic Trading",
+            "DeFi Solutions",
+            "Fintech Applications"
+        ],
+        "areaServed": "Worldwide",
+        "serviceType": [
+            "Blockchain Development",
+            "Distributed Systems",
+            "Fintech Solutions"
+        ]
+    }
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "CenSync",
+        "url": "https://censync.com",
+        "description": "Building the Future of Decentralized Systems",
+        "publisher": {
+            "@type": "Organization",
+            "name": "CenSync"
+        }
+    }
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "CenSync",
+        "image": "https://censync.com/logo.png",
+        "description": "Expert development of distributed systems, blockchain solutions, and fintech applications",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "Global"
+        },
+        "priceRange": "$$$$",
+        "areaServed": "Worldwide",
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "CenSync Services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Blockchain Development",
+                        "description": "DEX & CEX Development, Smart Contracts, Crosschain Bridges"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Distributed Systems",
+                        "description": "High-Performance Architecture, Microservices, Scalable Solutions"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Fintech Solutions",
+                        "description": "Payment Systems, Algo Trading, Risk Management"
+                    }
+                }
+            ]
+        }
+    }
+</script>
+
+<!-- Inline JavaScript -->
+<script>
+    // Mobile Navigation
+    document.addEventListener('DOMContentLoaded', () => {
+        const b = document.querySelectorAll('.navbar-burger');
+        b.forEach(el => {
+            el.addEventListener('click', () => {
+                const t = document.getElementById(el.dataset.target);
+                el.classList.toggle('is-active');
+                t.classList.toggle('is-active');
+            })
+        });
+        const n = document.querySelectorAll('.navbar-item'), m = document.getElementById('navbarMenu'),
+            g = document.querySelector('.navbar-burger');
+        n.forEach(i => i.addEventListener('click', () => {
+            m.classList.contains('is-active') && (m.classList.remove('is-active'), g.classList.remove('is-active'))
+        }))
+    });
+
+    // Smooth Scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', function (e) {
+        const h = this.getAttribute('href');
+        if (h === '#') return;
+        e.preventDefault();
+        const t = document.querySelector(h);
+        t && window.scrollTo({top: t.offsetTop - 60, behavior: 'smooth'})
+    }));
+
+    // Back to Top
+    const btn = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => btn.classList[window.pageYOffset > 300 ? 'add' : 'remove']('visible'));
+
+    // Animated Counter
+    const aC = (e, t, d = 2000) => {
+        let c = 0, i = t / (d / 16);
+        const tm = setInterval(() => {
+            c += i;
+            c >= t ? (e.textContent = t.toLocaleString(), clearInterval(tm)) : e.textContent = t < 100 ? c.toFixed(2) : Math.floor(c).toLocaleString()
+        }, 16)
+    };
+    const sO = new IntersectionObserver(e => e.forEach(en => {
+        if (en.isIntersecting && !en.target.classList.contains('animated')) {
+            aC(en.target, parseFloat(en.target.dataset.target));
+            en.target.classList.add('animated')
+        }
+    }), {threshold: 0.5});
+    document.querySelectorAll('.stat-number').forEach(s => sO.observe(s));
+
+    // Scroll Animations
+    const o = new IntersectionObserver(e => e.forEach(en => en.isIntersecting && (en.target.style.opacity = '1', en.target.style.transform = 'translateY(0)')), {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+    });
+    document.querySelectorAll('.card,.box').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity .6s ease,transform .6s ease';
+        o.observe(el)
+    });
+
+    // Contact Form
+    document.getElementById('contactForm').addEventListener('submit', async e => {
+        e.preventDefault();
+        const b = e.target.querySelector('button[type="submit"]'), t = b.innerHTML;
+        b.disabled = true;
+        b.innerHTML = '<span class="icon"><i class="fas fa-spinner fa-spin"></i></span><span>Sending...</span>';
+        await new Promise(r => setTimeout(r, 1500));
+        b.classList.remove('is-warning');
+        b.classList.add('is-success');
+        b.innerHTML = '<span class="icon"><i class="fas fa-check"></i></span><span>Message Sent!</span>';
+        e.target.reset();
+        setTimeout(() => {
+            b.disabled = false;
+            b.classList.remove('is-success');
+            b.classList.add('is-warning');
+            b.innerHTML = t
+        }, 3000)
+    });
+
+    // Navbar Background
+    const nav = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+        const s = window.pageYOffset;
+        s > 100 ? (nav.style.background = 'rgba(26,26,46,.95)', nav.style.backdropFilter = 'blur(10px)') : (nav.style.background = '', nav.style.backdropFilter = '')
+    });
+
+    // Particle Background
+    (() => {
+        const c = document.createElement('canvas');
+        Object.assign(c.style, {
+            position: 'absolute',
+            top: '0',
+            left: '0',
+            width: '100%',
+            height: '100%',
+            pointerEvents: 'none',
+            opacity: '0.3'
+        });
+        const h = document.querySelector('.hero-gradient');
+        if (!h) return;
+        h.style.position = 'relative';
+        h.insertBefore(c, h.firstChild);
+        const x = c.getContext('2d');
+        c.width = h.offsetWidth;
+        c.height = h.offsetHeight;
+        const ps = [], pc = 50;
+
+        class P {
+            constructor() {
+                this.x = Math.random() * c.width;
+                this.y = Math.random() * c.height;
+                this.size = Math.random() * 2 + 1;
+                this.speedX = Math.random() * .5 - .25;
+                this.speedY = Math.random() * .5 - .25
+            }
+
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                this.x > c.width && (this.x = 0);
+                this.x < 0 && (this.x = c.width);
+                this.y > c.height && (this.y = 0);
+                this.y < 0 && (this.y = c.height)
+            }
+
+            draw() {
+                x.fillStyle = '#ffd200';
+                x.beginPath();
+                x.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                x.fill()
+            }
+        }
+
+        for (let i = 0; i < pc; i++) ps.push(new P());
+
+        function an() {
+            x.clearRect(0, 0, c.width, c.height);
+            ps.forEach(p => {
+                p.update();
+                p.draw()
+            });
+            ps.forEach((p1, i) => ps.slice(i + 1).forEach(p2 => {
+                const dx = p1.x - p2.x, dy = p1.y - p2.y, d = Math.sqrt(dx * dx + dy * dy);
+                if (d < 100) {
+                    x.strokeStyle = `rgba(255,210,0,${1 - d / 100})`;
+                    x.lineWidth = .5;
+                    x.beginPath();
+                    x.moveTo(p1.x, p1.y);
+                    x.lineTo(p2.x, p2.y);
+                    x.stroke()
+                }
+            }));
+            requestAnimationFrame(an)
+        }
+
+        an();
+        window.addEventListener('resize', () => {
+            c.width = h.offsetWidth;
+            c.height = h.offsetHeight
+        })
+    })();
+
+    // Console Easter Egg
+    console.log('%cCenSync', 'font-size:50px;font-weight:bold;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);-webkit-background-clip:text;color:transparent');
+    console.log('%cBuilding the future of decentralized systems', 'font-size:14px;color:#666');
+    console.log('%cInterested in joining our team? Contact us at dev@censync.com', 'font-size:12px;color:#ffd200');
+</script>
 </body>
 </html>
