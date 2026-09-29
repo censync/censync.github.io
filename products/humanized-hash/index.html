@@ -1,0 +1,1392 @@
+<!DOCTYPE html>
+<html lang="en" class="has-navbar-fixed-top">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Humanized Hash: visual hash vs address poisoning | CenSync</title>
+    <meta name="description" content="Humanized Hash (hh) turns a blockchain address or hash into a small picture people compare at a glance, to catch address poisoning and clipboard swaps. MIT.">
+    <meta name="keywords" content="Humanized Hash, hh, visual hash, address poisoning, clipboard hijacker, identicon, crypto address verification, wallet security, colour-blind safe, open source">
+    <meta name="author" content="CenSync">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <link rel="canonical" href="https://censync.com/products/humanized-hash/">
+    <meta name="theme-color" content="#1a1a2e">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="CenSync">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:url" content="https://censync.com/products/humanized-hash/">
+    <meta property="og:title" content="Humanized Hash (hh): an address as a picture you compare at a glance">
+    <meta property="og:description" content="Address poisoning and clipboard hijackers bet that you check only the first and last characters. hh draws the whole address, and a lookalike picture costs GPU-years to fake. C++, Kotlin, TypeScript, Go, Python.">
+    <meta property="og:image" content="https://censync.com/assets/img/products/og/humanized-hash.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Two wallet fields that both read 0xd9A1…3a91 and the two different hh pictures behind them">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Humanized Hash (hh): an address as a picture you compare at a glance">
+    <meta name="twitter:description" content="Address poisoning and clipboard hijackers bet that you check only the first and last characters. hh draws the whole address, and a lookalike picture costs GPU-years to fake. C++, Kotlin, TypeScript, Go, Python.">
+    <meta name="twitter:image" content="https://censync.com/assets/img/products/og/humanized-hash.png">
+    <meta name="twitter:image:alt" content="Two wallet fields that both read 0xd9A1…3a91 and the two different hh pictures behind them">
+
+    <!-- Icons -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='75' font-size='80'%3E⚡%3C/text%3E%3C/svg%3E">
+    <link rel="manifest" href="/manifest.json">
+
+    <!-- Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&amp;display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css" integrity="sha384-DCY3M8xLkMu6c9IKcKbe+jHKMjelnwC0p+SBaxfHxoBYZWdJF2X400UdBCgATtAB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha384-iw3OoTErCYJJB9mCa8LNS2hbsQ7M3C0EpIsO/H5+EGAkPGc6rk+V8i04oW/K5xq0" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/css/products.css?v=e14db0e7b2">
+    <link rel="preload" as="image" href="/assets/img/products/humanized-hash/same-ends-different-pictures.webp" fetchpriority="high">
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://censync.com/#organization",
+      "name": "CenSync",
+      "url": "https://censync.com/",
+      "email": "dev@censync.com",
+      "sameAs": [
+        "https://github.com/censync"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://censync.com/#website",
+      "url": "https://censync.com/",
+      "name": "CenSync",
+      "publisher": {
+        "@id": "https://censync.com/#organization"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "ItemPage",
+      "@id": "https://censync.com/products/humanized-hash/#webpage",
+      "url": "https://censync.com/products/humanized-hash/",
+      "name": "Humanized Hash: visual hash vs address poisoning | CenSync",
+      "description": "Humanized Hash (hh) turns a blockchain address or hash into a small picture people compare at a glance, to catch address poisoning and clipboard swaps. MIT.",
+      "isPartOf": {
+        "@id": "https://censync.com/#website"
+      },
+      "breadcrumb": {
+        "@id": "https://censync.com/products/humanized-hash/#breadcrumb"
+      },
+      "inLanguage": "en",
+      "datePublished": "2026-09-29",
+      "dateModified": "2026-09-29",
+      "primaryImageOfPage": {
+        "@id": "https://censync.com/products/humanized-hash/#primaryimage"
+      },
+      "about": {
+        "@id": "https://censync.com/products/humanized-hash/#software"
+      },
+      "mainEntity": {
+        "@id": "https://censync.com/products/humanized-hash/#software"
+      },
+      "citation": [
+        {
+          "@type": "NewsArticle",
+          "name": "CoinDesk. 1,155 WBTC, about $68M, sent to a lookalike address after a 0.05 ETH test. 3 May 2024.",
+          "url": "https://www.coindesk.com/business/2024/05/03/exploiter-steals-68m-worth-of-crypto-through-address-poisoning"
+        },
+        {
+          "@type": "Article",
+          "name": "Blockaid. A deep dive into address poisoning: the real and the attacker's address of the WBTC case.",
+          "url": "https://www.blockaid.io/blog/a-deep-dive-into-address-poisoning"
+        },
+        {
+          "@type": "NewsArticle",
+          "name": "Cointelegraph. About 22,960 ETH returned after a 10% bounty offer. May 2024.",
+          "url": "https://cointelegraph.com/news/wbtc-address-poisoner-all-funds-negotiations"
+        },
+        {
+          "@type": "Article",
+          "name": "Chainalysis. Anatomy of an address poisoning scam: 82,031 seeded addresses, net profit $1.49M. 2024.",
+          "url": "https://www.chainalysis.com/blog/address-poisoning-scam/"
+        },
+        {
+          "@type": "ScholarlyArticle",
+          "name": "Tsuchiya, Dong, Soska, Christin. Blockchain Address Poisoning. USENIX Security 2025.",
+          "url": "https://www.usenix.org/system/files/usenixsecurity25-tsuchiya.pdf"
+        },
+        {
+          "@type": "Article",
+          "name": "Etherscan. What is address poisoning: a zero-value transferFrom needs no allowance.",
+          "url": "https://info.etherscan.com/what-is-address-poisoning/"
+        },
+        {
+          "@type": "NewsArticle",
+          "name": "CoinDesk. A 50 USDT test, then 49,999,950 USDT to a lookalike. 20 December 2025.",
+          "url": "https://www.coindesk.com/web3/2025/12/20/crypto-user-loses-usd50-million-in-address-poisoning-scam"
+        },
+        {
+          "@type": "NewsArticle",
+          "name": "Protos. The same $50M USDT case. December 2025.",
+          "url": "https://protos.com/crypto-trader-loses-50m-usdt-to-address-poisoning-scam/"
+        },
+        {
+          "@type": "Article",
+          "name": "Blockaid. Address poisoning: the growing threat. 628,000 attempts in November 2025, 3.4 million in January 2026.",
+          "url": "https://blockaid.io/blog/address-poisoning-the-growing-threat-draining-millions-from-crypto-users"
+        },
+        {
+          "@type": "Article",
+          "name": "Coin Metrics. State of the Network, issue 349: dust is about 11% of Ethereum transactions. 2026.",
+          "url": "https://coinmetrics.substack.com/p/state-of-the-network-issue-349"
+        },
+        {
+          "@type": "WebPage",
+          "name": "Trezor. Address poisoning attacks: “carefully check every character”.",
+          "url": "https://trezor.io/support/troubleshooting/coins-tokens/address-poisoning-attacks"
+        },
+        {
+          "@type": "Article",
+          "name": "Ledger. Address poisoning: “people are not machines”.",
+          "url": "https://www.ledger.com/blog/address-poisoning"
+        },
+        {
+          "@type": "Article",
+          "name": "MetaMask. Address poisoning detection: truncation “is the exact blind spot scammers exploit”. 17 June 2026.",
+          "url": "https://metamask.io/news/address-poisoning-detection"
+        },
+        {
+          "@type": "SoftwareSourceCode",
+          "name": "1inch. profanity2: 1,361 million addresses per second on an RTX 4090, self-reported.",
+          "url": "https://github.com/1inch/profanity2"
+        },
+        {
+          "@type": "Article",
+          "name": "Kaspersky. CryptoShuffler: 23 BTC stolen through the clipboard. 2017.",
+          "url": "https://www.kaspersky.com/blog/cryptoshuffler-bitcoin-stealer/19976/"
+        },
+        {
+          "@type": "Article",
+          "name": "Palo Alto Networks Unit 42. ComboJack checks the clipboard every half second. 2018.",
+          "url": "https://unit42.paloaltonetworks.com/unit42-sure-ill-take-new-combojack-malware-alters-clipboards-steal-cryptocurrency/"
+        },
+        {
+          "@type": "NewsArticle",
+          "name": "Bleeping Computer. A clipboard hijacker working with over 2.3 million addresses. 2018.",
+          "url": "https://www.bleepingcomputer.com/news/security/clipboard-hijacker-malware-monitors-23-million-bitcoin-addresses/"
+        },
+        {
+          "@type": "Article",
+          "name": "ESET. The first clipper on Google Play, a fake MetaMask. February 2019.",
+          "url": "https://www.welivesecurity.com/2019/02/08/first-clipper-malware-google-play/"
+        },
+        {
+          "@type": "Article",
+          "name": "Kaspersky Securelist. Copy-paste heist: a clipper in a trojanized Tor Browser, about 16,000 detections in 52 countries. 2023.",
+          "url": "https://securelist.com/copy-paste-heist-clipboard-injector-targeting-cryptowallets/109186/"
+        },
+        {
+          "@type": "Article",
+          "name": "Kaspersky. About $400,000 stolen through the fake Tor Browser in 2023.",
+          "url": "https://www.kaspersky.com/about/press-releases/new-clipper-malware-steals-us400000-in-cryptocurrencies-via-fake-tor-browser"
+        },
+        {
+          "@type": "Article",
+          "name": "Cyble. Laplas Clipper asks its server for a lookalike of the copied address. 2022.",
+          "url": "https://cyble.com/blog/new-laplas-clipper-distributed-by-smokeloader/"
+        },
+        {
+          "@type": "NewsArticle",
+          "name": "Bleeping Computer. A Laplas test: the returned address matched the first and last characters in about 5 seconds. 2022.",
+          "url": "https://www.bleepingcomputer.com/news/security/new-clipboard-hijacker-replaces-crypto-wallet-addresses-with-lookalikes/"
+        },
+        {
+          "@type": "Article",
+          "name": "Microsoft Security. A clipper that substitutes a Bitcoin address with the same first two characters. 17 June 2026.",
+          "url": "https://www.microsoft.com/en-us/security/blog/2026/06/17/crypto-clipper-uses-tor-worm-like-propagation-for-persistence-control/"
+        },
+        {
+          "@type": "Article",
+          "name": "Check Point Research. A Rust clipper with over 15,500 embedded addresses. 17 June 2026.",
+          "url": "https://research.checkpoint.com/2026/from-stars-to-upvotes-fake-reputation-fueling-a-crypto-clipboard-hijacker/"
+        },
+        {
+          "@type": "Article",
+          "name": "Aikido. npm debug and chalk packages compromised: the replacement chosen by Levenshtein distance. 8 September 2025.",
+          "url": "https://www.aikido.dev/blog/npm-debug-and-chalk-packages-compromised"
+        },
+        {
+          "@type": "Article",
+          "name": "Security Alliance. Incident analysis: 280 hardcoded attacker addresses. September 2025.",
+          "url": "https://radar.securityalliance.org/2025-09-npm-supply-chain"
+        },
+        {
+          "@type": "Article",
+          "name": "ReversingLabs. An npm package that patches installed Atomic and Exodus wallets. April 2025.",
+          "url": "https://www.reversinglabs.com/blog/atomic-and-exodus-crypto-wallets-targeted-in-malicious-npm-campaign"
+        },
+        {
+          "@type": "Article",
+          "name": "Doctor Web. Counterfeit Android phones with a WhatsApp that swaps addresses inside messages. April 2025.",
+          "url": "https://news.drweb.com/show/?i=15002&lng=en&c=5"
+        },
+        {
+          "@type": "ScholarlyArticle",
+          "name": "Cherubini et al. Towards Usable Checksums. CCS 2018.",
+          "url": "https://mhumbert.com/publications/ccs18.pdf"
+        },
+        {
+          "@type": "ScholarlyArticle",
+          "name": "Tan et al. Can Unicorns Help Users Compare Crypto Key Fingerprints? CHI 2017.",
+          "url": "https://www.blaseur.com/papers/chi2017-fingerprints.pdf"
+        },
+        {
+          "@type": "ScholarlyArticle",
+          "name": "Hsiao et al. A Study of User-Friendly Hash Comparison Schemes. ACSAC 2009.",
+          "url": "https://netsec.ethz.ch/publications/papers/visual_hash_acsac09.pdf"
+        },
+        {
+          "@type": "ScholarlyArticle",
+          "name": "Olembo et al. Developing and Testing a Visual Hash Scheme. 2013."
+        },
+        {
+          "@type": "SoftwareSourceCode",
+          "name": "MetaMask extension source, icon-factory.ts: the Jazzicon seed. “Same eight digits, same icon” is our reading of the code, not a published demonstration.",
+          "url": "https://raw.githubusercontent.com/MetaMask/metamask-extension/main/ui/helpers/utils/icon-factory.ts"
+        },
+        {
+          "@type": "WebPage",
+          "name": "Austin Griffith. Blockie miner: a lookalike after 45 minutes.",
+          "url": "https://austingriffith.com/portfolio/blockieminer/"
+        },
+        {
+          "@type": "ScholarlyArticle",
+          "name": "Petroff. Accessible Color Sequences for Data Visualization. 2021."
+        },
+        {
+          "@type": "ScholarlyArticle",
+          "name": "Machado, Oliveira, Fernandes. A Physiologically-based Model for Simulation of Color Vision Deficiency. 2009."
+        },
+        {
+          "@type": "ScholarlyArticle",
+          "name": "Brettel et al. 1997: the tritanopia simulation."
+        },
+        {
+          "@type": "TechArticle",
+          "name": "hh-cpp, docs/SECURITY.md: 68 nominal bits, 44 in shape; 16,384 PBKDF2 iterations; forgery-cost estimates.",
+          "url": "https://github.com/censync/hh-cpp/blob/v1.1.0/docs/SECURITY.md"
+        },
+        {
+          "@type": "TechArticle",
+          "name": "hh-cpp, docs/design: benchmarks, the grinding experiment and the palette gate.",
+          "url": "https://github.com/censync/hh-cpp/tree/v1.1.0/docs/design"
+        }
+      ]
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://censync.com/products/humanized-hash/#primaryimage",
+      "url": "https://censync.com/assets/img/products/og/humanized-hash.png",
+      "contentUrl": "https://censync.com/assets/img/products/og/humanized-hash.png",
+      "width": 1200,
+      "height": 630,
+      "caption": "Two wallet fields that both read 0xd9A1…3a91 and the two different hh pictures behind them"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://censync.com/products/humanized-hash/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://censync.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Products",
+          "item": "https://censync.com/products/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Humanized Hash",
+          "item": "https://censync.com/products/humanized-hash/"
+        }
+      ]
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "@id": "https://censync.com/products/humanized-hash/#software",
+      "name": "Humanized Hash (hh)",
+      "alternateName": [
+        "hh",
+        "Humanized Hash"
+      ],
+      "description": "A blockchain address, a public key or a hash as a small deterministic picture that a person can compare at a glance, made to catch address poisoning and clipboard substitution.",
+      "url": "https://censync.com/products/humanized-hash/",
+      "codeRepository": "https://github.com/censync/hh-cpp",
+      "programmingLanguage": [
+        {
+          "@type": "ComputerLanguage",
+          "name": "C++"
+        },
+        {
+          "@type": "ComputerLanguage",
+          "name": "Kotlin"
+        },
+        {
+          "@type": "ComputerLanguage",
+          "name": "Java"
+        },
+        {
+          "@type": "ComputerLanguage",
+          "name": "TypeScript"
+        },
+        {
+          "@type": "ComputerLanguage",
+          "name": "JavaScript"
+        },
+        {
+          "@type": "ComputerLanguage",
+          "name": "Go"
+        },
+        {
+          "@type": "ComputerLanguage",
+          "name": "Python"
+        }
+      ],
+      "version": "1.1.0",
+      "license": "https://opensource.org/licenses/MIT",
+      "isAccessibleForFree": true,
+      "keywords": [
+        "visual hash",
+        "address poisoning",
+        "identicon",
+        "blockchain",
+        "colour-blind safe",
+        "fingerprint"
+      ],
+      "author": {
+        "@type": "Person",
+        "name": "Dmitry Mandrika",
+        "affiliation": {
+          "@id": "https://censync.com/#organization"
+        }
+      },
+      "publisher": {
+        "@id": "https://censync.com/#organization"
+      },
+      "image": {
+        "@id": "https://censync.com/products/humanized-hash/#primaryimage"
+      },
+      "hasPart": [
+        {
+          "@id": "https://censync.com/products/humanized-hash/#hh-cpp"
+        },
+        {
+          "@id": "https://censync.com/products/humanized-hash/#hh-kotlin"
+        },
+        {
+          "@id": "https://censync.com/products/humanized-hash/#hh-ts"
+        },
+        {
+          "@id": "https://censync.com/products/humanized-hash/#go-hh"
+        },
+        {
+          "@id": "https://censync.com/products/humanized-hash/#hh-python"
+        }
+      ],
+      "subjectOf": {
+        "@type": "Article",
+        "headline": "Wallet address spoofing attacks: Nobody reads 42 characters",
+        "url": "https://medium.com/@censync_dev/nobody-reads-42-characters-6b84726faff0",
+        "datePublished": "2026-09-23",
+        "author": {
+          "@type": "Person",
+          "name": "Dmitry Mandrika",
+          "affiliation": {
+            "@id": "https://censync.com/#organization"
+          }
+        },
+        "description": "Address poisoning and clipboard hijackers make the same bet: that you look at the first few characters of an address, the last few, and nothing in between."
+      }
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "@id": "https://censync.com/products/humanized-hash/#hh-cpp",
+      "name": "hh-cpp",
+      "description": "Humanized Hash for C++17 with a C ABI. Reference implementation: owns the specification and the golden vectors.",
+      "codeRepository": "https://github.com/censync/hh-cpp",
+      "programmingLanguage": [
+        {
+          "@type": "ComputerLanguage",
+          "name": "C++"
+        },
+        {
+          "@type": "ComputerLanguage",
+          "name": "C"
+        }
+      ],
+      "runtimePlatform": "C++17",
+      "version": "1.1.0",
+      "license": "https://opensource.org/licenses/MIT",
+      "publisher": {
+        "@id": "https://censync.com/#organization"
+      },
+      "sameAs": [
+        "https://github.com/censync/hh-cpp/releases"
+      ],
+      "isPartOf": {
+        "@id": "https://censync.com/products/humanized-hash/#software"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Dmitry Mandrika",
+        "affiliation": {
+          "@id": "https://censync.com/#organization"
+        }
+      }
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "@id": "https://censync.com/products/humanized-hash/#hh-kotlin",
+      "name": "hh-kotlin",
+      "description": "Humanized Hash for Kotlin and Java: JVM and Android.",
+      "codeRepository": "https://github.com/censync/hh-kotlin",
+      "programmingLanguage": [
+        {
+          "@type": "ComputerLanguage",
+          "name": "Kotlin"
+        },
+        {
+          "@type": "ComputerLanguage",
+          "name": "Java"
+        }
+      ],
+      "runtimePlatform": "JVM 8+, Android API 24+",
+      "version": "1.1.0",
+      "license": "https://opensource.org/licenses/MIT",
+      "publisher": {
+        "@id": "https://censync.com/#organization"
+      },
+      "sameAs": [
+        "https://central.sonatype.com/artifact/io.github.censync/hh"
+      ],
+      "isPartOf": {
+        "@id": "https://censync.com/products/humanized-hash/#software"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Dmitry Mandrika",
+        "affiliation": {
+          "@id": "https://censync.com/#organization"
+        }
+      }
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "@id": "https://censync.com/products/humanized-hash/#hh-ts",
+      "name": "hh-ts",
+      "description": "Humanized Hash for TypeScript and JavaScript: browsers, Node.js, Deno, Bun.",
+      "codeRepository": "https://github.com/censync/hh-ts",
+      "programmingLanguage": [
+        {
+          "@type": "ComputerLanguage",
+          "name": "TypeScript"
+        },
+        {
+          "@type": "ComputerLanguage",
+          "name": "JavaScript"
+        }
+      ],
+      "runtimePlatform": "Browsers, Node.js 20+, Deno, Bun",
+      "version": "1.1.0",
+      "license": "https://opensource.org/licenses/MIT",
+      "publisher": {
+        "@id": "https://censync.com/#organization"
+      },
+      "sameAs": [
+        "https://www.npmjs.com/package/@censync/hh"
+      ],
+      "isPartOf": {
+        "@id": "https://censync.com/products/humanized-hash/#software"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Dmitry Mandrika",
+        "affiliation": {
+          "@id": "https://censync.com/#organization"
+        }
+      }
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "@id": "https://censync.com/products/humanized-hash/#go-hh",
+      "name": "go-hh",
+      "description": "Humanized Hash for Go.",
+      "codeRepository": "https://github.com/censync/go-hh",
+      "programmingLanguage": [
+        {
+          "@type": "ComputerLanguage",
+          "name": "Go"
+        }
+      ],
+      "runtimePlatform": "Go 1.21+",
+      "version": "1.1.0",
+      "license": "https://opensource.org/licenses/MIT",
+      "publisher": {
+        "@id": "https://censync.com/#organization"
+      },
+      "sameAs": [
+        "https://pkg.go.dev/github.com/censync/go-hh"
+      ],
+      "isPartOf": {
+        "@id": "https://censync.com/products/humanized-hash/#software"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Dmitry Mandrika",
+        "affiliation": {
+          "@id": "https://censync.com/#organization"
+        }
+      }
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "@id": "https://censync.com/products/humanized-hash/#hh-python",
+      "name": "hh-python",
+      "description": "Humanized Hash for Python.",
+      "codeRepository": "https://github.com/censync/hh-python",
+      "programmingLanguage": [
+        {
+          "@type": "ComputerLanguage",
+          "name": "Python"
+        }
+      ],
+      "runtimePlatform": "Python 3.9+",
+      "version": "1.1.0",
+      "license": "https://opensource.org/licenses/MIT",
+      "publisher": {
+        "@id": "https://censync.com/#organization"
+      },
+      "sameAs": [
+        "https://pypi.org/project/humanized-hash/"
+      ],
+      "isPartOf": {
+        "@id": "https://censync.com/products/humanized-hash/#software"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Dmitry Mandrika",
+        "affiliation": {
+          "@id": "https://censync.com/#organization"
+        }
+      }
+    }
+  ]
+}
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B4X009BE1F"></script>
+    <script src="/assets/js/products.js?v=dd9725e141" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<nav class="navbar is-fixed-top is-dark" aria-label="Main navigation">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+                <span class="icon-text">
+                    <span class="icon has-text-warning"><i class="fas fa-bolt" aria-hidden="true"></i></span>
+                    <span class="has-text-weight-bold is-size-4">CenSync</span>
+                </span>
+            </a>
+            <button type="button" class="navbar-burger" aria-label="Menu" aria-expanded="false" aria-controls="navbarMenu" data-target="navbarMenu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </button>
+        </div>
+        <div id="navbarMenu" class="navbar-menu">
+            <div class="navbar-end">
+                <a class="navbar-item" href="/">Home</a>
+                <a class="navbar-item" href="/#services">Services</a>
+                <a class="navbar-item" href="/#solutions">Solutions</a>
+                <a class="navbar-item" href="/#technologies">Technologies</a>
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link is-active" href="/products/">Products</a>
+                    <div class="navbar-dropdown is-right">
+                        <a class="navbar-item is-active" aria-current="page" href="/products/humanized-hash/">Humanized Hash (hh)</a>
+                        <a class="navbar-item" href="/products/mhda/">MHDA</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<main id="main">
+
+<!-- Hero -->
+<section class="hero product-hero">
+    <div class="hero-body">
+        <div class="container">
+            <nav class="breadcrumb is-small mb-5" aria-label="Breadcrumb">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/products/">Products</a></li>
+                    <li class="is-active"><a href="/products/humanized-hash/" aria-current="page">Humanized Hash</a></li>
+                </ul>
+            </nav>
+            <div class="columns is-vcentered is-variable is-8">
+                <div class="column is-12-tablet is-6-desktop">
+                    <span class="eyebrow">Open-source library · v1.1.0</span>
+                    <h1 class="title is-1">Humanized Hash <span class="has-gradient-text">(hh)</span></h1>
+                    <p class="subtitle is-5 mt-4">
+                        An address, a public key or a hash as a small deterministic picture that a person can
+                        compare at a glance. Made to catch <strong>address poisoning</strong> and
+                        <strong>clipboard substitution</strong>, which work because people check only the first
+                        and last characters of a long string.
+                    </p>
+                    <div class="hero-meta" aria-label="Key facts">
+                        <span class="tag is-gold">MIT licence</span>
+                        <span class="tag">C++ · Kotlin/Java · TypeScript · Go · Python</span>
+                        <span class="tag">Zero dependencies</span>
+                        <span class="tag">Colour-blind safe</span>
+                    </div>
+                    <div class="buttons mt-5">
+                        <a class="button is-gold" href="#install">
+                            <span class="icon"><i class="fas fa-download" aria-hidden="true"></i></span><span>Install</span>
+                        </a>
+                        <a class="button is-ghost-light" href="https://github.com/censync/hh-cpp" rel="noopener">
+                            <span class="icon"><i class="fab fa-github" aria-hidden="true"></i></span><span>GitHub</span>
+                        </a>
+                        <a class="button is-ghost-light" href="https://medium.com/@censync_dev/nobody-reads-42-characters-6b84726faff0" rel="noopener">
+                            <span class="icon"><i class="fab fa-medium" aria-hidden="true"></i></span><span>Read the article</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="column is-12-tablet is-6-desktop">
+                    <figure class="hero-figure">
+                        <img src="/assets/img/products/humanized-hash/same-ends-different-pictures.webp" width="1600" height="900" fetchpriority="high"
+                             alt="Two wallet fields that both read 0xd9A1…3a91; below them the full addresses and two completely different hh pictures, tags W2D-2K6 and X9B-KSW">
+                        <figcaption>The real recipient and the attacker's lookalike from the 3 May 2024 case<sup class="ref"><a href="#src-blockaid-deep-dive" aria-label="Source 2">2</a></sup>: the same first four and last six hex digits, unrelated pictures. Drawn by hh.</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- The problem -->
+<section class="section" id="problem" aria-labelledby="problem-title">
+    <div class="container">
+        <span class="eyebrow">The problem</span>
+        <h2 class="title is-3" id="problem-title">Nobody reads 42 characters</h2>
+        <div class="content section-lead">
+            <p>
+                On 3 May 2024 someone sent 1,155 WBTC, about $68 million that day, to a stranger<sup class="ref"><a href="#src-coindesk-wbtc" aria-label="Source 1">1</a></sup>.
+                They had been careful: first a 0.05 ETH test payment to the right address, then the real amount.
+                In between, an attacker dropped a worthless transfer into their history from an address that began
+                with <code>0xd9A1</code> and ended with <code>853a91</code>. When the victim copied the recipient
+                from the history, there were two entries that read <code>0xd9A1…3a91</code>, and they picked the
+                wrong one<sup class="ref"><a href="#src-blockaid-deep-dive" aria-label="Source 2">2</a></sup>.
+            </p>
+        </div>
+
+        <div class="columns is-multiline mt-5">
+            <div class="column is-6-tablet is-3-desktop">
+                <div class="box stat"><span class="num">$83.8M</span><span class="lbl">lost to address poisoning on Ethereum and BSC, Jul 2022 – Jun 2024<sup class="ref"><a href="#src-tsuchiya" aria-label="Source 5">5</a></sup></span></div>
+            </div>
+            <div class="column is-6-tablet is-3-desktop">
+                <div class="box stat"><span class="num">270M</span><span class="lbl">poisoning transfers aimed at 17.4 million addresses in the same two years<sup class="ref"><a href="#src-tsuchiya" aria-label="Source 5">5</a></sup></span></div>
+            </div>
+            <div class="column is-6-tablet is-3-desktop">
+                <div class="box stat"><span class="num">38%</span><span class="lbl">of participants missed a mismatch in a checksum cut to its first and last ten digits<sup class="ref"><a href="#src-cherubini" aria-label="Source 29">29</a></sup></span></div>
+            </div>
+            <div class="column is-6-tablet is-3-desktop">
+                <div class="box stat"><span class="num">3 s</span><span class="lbl">for one GPU to find an address with the same first four and last four hex digits<sup class="ref"><a href="#src-profanity2" aria-label="Source 14">14</a>,<a href="#src-hh-security" aria-label="Source 38">38</a></sup></span></div>
+            </div>
+        </div>
+
+        <div class="columns is-variable is-6 mt-4">
+            <div class="column is-6">
+                <div class="content">
+                    <h3>The swap after Ctrl+C</h3>
+                    <p>
+                        A clipboard hijacker watches the clipboard and replaces a copied address with the attacker's.
+                        CryptoShuffler took 23 BTC this way in 2017<sup class="ref"><a href="#src-kaspersky-cryptoshuffler" aria-label="Source 15">15</a></sup>; a trojanized Tor
+                        Browser with a clipper inside was detected about 16,000 times in 52 countries in
+                        2023<sup class="ref"><a href="#src-securelist-tor" aria-label="Source 19">19</a></sup>. Modern clippers pick a replacement that <em>looks</em> right: Laplas
+                        Clipper asks its server for a lookalike of the copied address<sup class="ref"><a href="#src-cyble-laplas" aria-label="Source 21">21</a>,<a href="#src-bleeping-laplas" aria-label="Source 22">22</a></sup>.
+                    </p>
+                    <p>
+                        The swap no longer has to happen in the clipboard. In September 2025 malicious versions of
+                        <code>chalk</code>, <code>debug</code> and sixteen other npm packages rewrote addresses inside
+                        web pages and outgoing transactions, choosing the replacement by Levenshtein
+                        distance<sup class="ref"><a href="#src-aikido-npm" aria-label="Source 25">25</a></sup>.
+                    </p>
+                </div>
+            </div>
+            <div class="column is-6">
+                <div class="content">
+                    <h3>The transfer you never asked for</h3>
+                    <p>
+                        Address poisoning needs no malware. After you pay someone, an attacker plants a row in your
+                        history from an address that begins and ends like theirs: dust, a zero-value
+                        <code>transferFrom</code> that needs no allowance, or a counterfeit token<sup class="ref"><a href="#src-tsuchiya" aria-label="Source 5">5</a>,<a href="#src-etherscan" aria-label="Source 6">6</a></sup>.
+                        Next time you copy "their" address from the history, it isn't theirs.
+                    </p>
+                    <p>
+                        After fees fell in December 2025, Blockaid counted 628,000 poisoning attempts in November 2025
+                        and 3.4 million in January 2026<sup class="ref"><a href="#src-blockaid-growth" aria-label="Source 9">9</a></sup>. Wallets truncate addresses to a few
+                        characters at each end, which is, in MetaMask's words, "the exact blind spot scammers
+                        exploit"<sup class="ref"><a href="#src-metamask" aria-label="Source 13">13</a></sup>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- How it works -->
+<section class="section is-alt" id="how-it-works" aria-labelledby="how-title">
+    <div class="container">
+        <span class="eyebrow">How it works</span>
+        <h2 class="title is-3" id="how-title">A picture that depends on every bit of the address</h2>
+        <div class="content section-lead">
+            <p>
+                hh turns the input into a 4 × 4 grid. A cell is empty or holds one solid figure: a square, a circle
+                or a triangle pointing one of four ways, in one of four colours. It hashes bytes, not strings, so the
+                checksummed, lower-case and upper-case spellings of one EVM address give one picture. Next to the
+                picture there is a six-character tag such as <code>TKS-PVH</code>: a check that is certain, short
+                enough to read out over the phone.
+            </p>
+        </div>
+
+        <div class="columns is-variable is-6 mt-2">
+            <div class="column is-7-desktop">
+                <h3 class="title is-5">One digit changes every cell</h3>
+                <p class="mb-4">A Sui address has 64 hex digits. The second differs from the first in one digit, the third in two.</p>
+                <div class="hh-compare">
+                    <div class="row">
+                        <img src="/assets/img/products/humanized-hash/sui-a.png" width="128" height="128" loading="lazy" alt="hh picture of the first Sui address">
+                        <div><code>0xeab3150efcb34ff74930d8f3d491be109070a39e4d380de7737aff5c72a0b6b2</code><div class="tagline">tag <strong>B6P-65H</strong></div></div>
+                    </div>
+                    <div class="row">
+                        <img src="/assets/img/products/humanized-hash/sui-b.png" width="128" height="128" loading="lazy" alt="hh picture of the second Sui address, unrelated to the first">
+                        <div><code>0xeab3150efcb34ff74930d8f<ins>8</ins>d491be109070a39e4d380de7737aff5c72a0b6b2</code><div class="tagline">tag <strong>Q60-QKR</strong> · one digit changed</div></div>
+                    </div>
+                    <div class="row">
+                        <img src="/assets/img/products/humanized-hash/sui-c.png" width="128" height="128" loading="lazy" alt="hh picture of the third Sui address, unrelated to the other two">
+                        <div><code>0xeab3150efcb34ff74930d8f3d491be1090<ins>1</ins>0a39e4d380d<ins>c</ins>7737aff5c72a0b6b2</code><div class="tagline">tag <strong>ZSJ-7BK</strong> · two digits changed</div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-5-desktop">
+                <div class="content">
+                    <h3 class="title is-5">Designed from the usability research</h3>
+                    <ul>
+                        <li><strong>Few categorical values.</strong> No gradients or fine texture: people compare a few distinct colours far better than fine colour steps<sup class="ref"><a href="#src-hsiao" aria-label="Source 31">31</a></sup>.</li>
+                        <li><strong>Equal salience.</strong> Every cell has the same size and the same kinds of content, so there is no single dominant feature for a forger to match first<sup class="ref"><a href="#src-tan" aria-label="Source 30">30</a></sup>.</li>
+                        <li><strong>Content you can name.</strong> "Purple triangle pointing left, top-left corner" works over the phone.</li>
+                        <li><strong>Stretched on purpose.</strong> Before anything is drawn, the input goes through 16,384 iterations of PBKDF2-HMAC-SHA-256: about 7 ms per address on a desktop core, cached once<sup class="ref"><a href="#src-hh-security" aria-label="Source 38">38</a>,<a href="#src-hh-design" aria-label="Source 39">39</a></sup>.</li>
+                        <li><strong>No invented cryptography.</strong> SHA-256, HMAC and PBKDF2 with length-prefixed, domain-separated inputs.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="columns is-multiline mt-5">
+            <div class="column is-6-tablet is-3-desktop">
+                <div class="card feature-card"><div class="card-content">
+                    <span class="icon is-medium"><i class="fas fa-equals fa-lg" aria-hidden="true"></i></span>
+                    <h3>Deterministic to the byte</h3>
+                    <p>Integer arithmetic only. The same input gives the same pixels and the same PNG, BMP and JPEG bytes in every implementation, on every platform.</p>
+                </div></div>
+            </div>
+            <div class="column is-6-tablet is-3-desktop">
+                <div class="card feature-card"><div class="card-content">
+                    <span class="icon is-medium"><i class="fas fa-snowflake fa-lg" aria-hidden="true"></i></span>
+                    <h3>Frozen algorithm</h3>
+                    <p>The algorithm has no version and never changes: a picture a user has learned stays the same for ever. Releases follow SemVer and never alter the output.</p>
+                </div></div>
+            </div>
+            <div class="column is-6-tablet is-3-desktop">
+                <div class="card feature-card"><div class="card-content">
+                    <span class="icon is-medium"><i class="fas fa-box-open fa-lg" aria-hidden="true"></i></span>
+                    <h3>No dependencies</h3>
+                    <p>SHA-256, HMAC, PBKDF2, deflate and the image encoders are part of the library. The library returns RGBA buffers and encoded files.</p>
+                </div></div>
+            </div>
+            <div class="column is-6-tablet is-3-desktop">
+                <div class="card feature-card"><div class="card-content">
+                    <span class="icon is-medium"><i class="fas fa-vial-circle-check fa-lg" aria-hidden="true"></i></span>
+                    <h3>One set of golden vectors</h3>
+                    <p>hh-cpp owns the specification and the golden vectors; every port reproduces them byte for byte in its own tests.</p>
+                </div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Modes -->
+<section class="section" id="modes" aria-labelledby="modes-title">
+    <div class="container">
+        <span class="eyebrow">Two modes</span>
+        <h2 class="title is-3" id="modes-title">Universal and keyed pictures</h2>
+        <div class="columns is-variable is-6">
+            <div class="column is-5-desktop">
+                <div class="content">
+                    <p>
+                        A <strong>universal</strong> picture is the same for everyone. It is what two people compare:
+                        a receive screen shown to a payer, a payment request, a support chat.
+                    </p>
+                    <p>
+                        A <strong>keyed</strong> picture is computed with a 32-byte secret of the wallet. An attacker
+                        who does not hold the key cannot compute the picture you will see, so there is nothing to grind
+                        against: a lookalike address gets some random picture, unrelated to the one you know. Inside an
+                        application keyed pictures are the default<sup class="ref"><a href="#src-hh-security" aria-label="Source 38">38</a></sup>.
+                    </p>
+                    <p>
+                        The two modes give unrelated pictures on purpose, and keyed pictures carry a frame so you can
+                        tell which one you are looking at. Mixing them up can only cause a false alarm, never a false
+                        match.
+                    </p>
+                </div>
+            </div>
+            <div class="column is-7-desktop">
+                <figure class="figure-card mt-0">
+                    <img src="/assets/img/products/humanized-hash/universal-and-keyed.webp" width="1600" height="820" loading="lazy"
+                         alt="The same address drawn three ways: the universal picture, the keyed picture of wallet A and the keyed picture of wallet B, all different">
+                    <figcaption>The same address: universal, keyed for wallet A, keyed for wallet B.</figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Forgery cost -->
+<section class="section is-alt" id="forgery-cost" aria-labelledby="cost-title">
+    <div class="container">
+        <span class="eyebrow">Security</span>
+        <h2 class="title is-3" id="cost-title">What a forgery costs</h2>
+        <div class="content section-lead">
+            <p>
+                By calculation, not a measured attack. One current GPU tries about 1.4 billion addresses per
+                second<sup class="ref"><a href="#src-profanity2" aria-label="Source 14">14</a></sup>; a try against hh also has to compute the stretched digest, which leaves about
+                680,000 tries per second. The figures are expected search times on one such GPU for a typical
+                picture<sup class="ref"><a href="#src-hh-security" aria-label="Source 38">38</a></sup>.
+            </p>
+        </div>
+        <div class="table-container">
+            <table class="table is-fullwidth is-hoverable">
+                <caption class="is-sr-only">Expected time to forge a lookalike on one GPU</caption>
+                <thead>
+                <tr><th scope="col">The forged address has to match</th><th scope="col">Tries</th><th scope="col">One GPU</th></tr>
+                </thead>
+                <tbody>
+                <tr><td>the first 4 and the last 4 hex digits</td><td>2<sup>32</sup></td><td>3 seconds</td></tr>
+                <tr><td>the first 6 and the last 6 hex digits</td><td>2<sup>48</sup></td><td>2.3 days</td></tr>
+                <tr><td>the first 8 and the last 8 hex digits</td><td>2<sup>64</sup></td><td>420 years</td></tr>
+                <tr><td>the universal picture, with two cells allowed to differ</td><td>2<sup>52</sup>, stretched</td><td><strong>210 years</strong></td></tr>
+                <tr><td>the universal picture, in every cell</td><td>2<sup>68</sup>, stretched</td><td><strong>14 million years</strong></td></tr>
+                <tr><td>the ends of the text and the picture</td><td colspan="2">the product of the two</td></tr>
+                <tr><td>the keyed picture</td><td colspan="2">cannot be searched: without the key the picture cannot be computed</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="content section-lead mt-5">
+            <p>
+                Two honest caveats. A mass attacker tests each candidate against many victims at
+                once<sup class="ref"><a href="#src-tsuchiya" aria-label="Source 5">5</a></sup>, which divides the cost per victim; that is why keyed pictures are the default
+                inside a wallet. And people reliably tell apart only about 30 bits of a visual hash<sup class="ref"><a href="#src-olembo" aria-label="Source 32">32</a></sup>: a
+                picture that looks different proves the address is different, a picture that looks the same is
+                strong evidence, not proof. The tag or the full address is the check that is certain.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Identicons -->
+<section class="section" id="identicons" aria-labelledby="identicons-title">
+    <div class="container">
+        <span class="eyebrow">Comparison</span>
+        <h2 class="title is-3" id="identicons-title">Why not just use identicons?</h2>
+        <div class="columns is-variable is-6">
+            <div class="column is-5-desktop">
+                <div class="content">
+                    <p>
+                        Wallets already draw small icons next to addresses, but a lookalike often gets a lookalike
+                        icon. As far as we can read the MetaMask source, Jazzicon is seeded with the first eight hex
+                        digits of the address, so an address that matches those digits gets the same
+                        icon<sup class="ref"><a href="#src-metamask-jazzicon" aria-label="Source 33">33</a></sup>. A Blockie miner found a twin good enough to survive a glance after
+                        45 minutes<sup class="ref"><a href="#src-blockie-miner" aria-label="Source 34">34</a></sup>.
+                    </p>
+                    <p>
+                        We ran the same experiment on hh: 2<sup>24</sup> random candidates per target, keeping the five
+                        that look most like it. The nearest candidates share the pattern of empty cells and still differ
+                        in two to four colours and three to six figures<sup class="ref"><a href="#src-hh-design" aria-label="Source 39">39</a></sup>.
+                    </p>
+                </div>
+            </div>
+            <div class="column is-7-desktop">
+                <figure class="figure-card mt-0">
+                    <img src="/assets/img/products/humanized-hash/nearest-lookalikes-blockies-vs-hh.webp" width="1600" height="1000" loading="lazy"
+                         alt="Rows of icons: a target on the left and its five nearest lookalikes; Blockies-style icons look similar, hh pictures do not">
+                    <figcaption>Nearest of 2<sup>24</sup> candidates. With Blockies-style icons the overall impression converges; with hh it does not.</figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Colour -->
+<section class="section is-alt" id="colour-vision" aria-labelledby="colour-title">
+    <div class="container">
+        <span class="eyebrow">Accessibility</span>
+        <h2 class="title is-3" id="colour-title">Four colours, chosen for people who see them differently</h2>
+        <div class="columns is-variable is-6">
+            <div class="column is-5-desktop">
+                <div class="content">
+                    <p>
+                        About one man in twelve has a colour vision deficiency, so colour is the secondary channel:
+                        44 of the picture's 68 nominal bits are in shape and position, which survive any kind of colour
+                        vision, greyscale and JPEG<sup class="ref"><a href="#src-hh-security" aria-label="Source 38">38</a></sup>.
+                    </p>
+                    <p>
+                        The palette was searched with Petroff's method<sup class="ref"><a href="#src-petroff" aria-label="Source 35">35</a></sup>: the perceptual distance of every
+                        pair in CAM02-UCS under normal vision, protanomaly and deuteranomaly from 10% to 100%
+                        severity<sup class="ref"><a href="#src-machado" aria-label="Source 36">36</a></sup> and tritanopia<sup class="ref"><a href="#src-brettel" aria-label="Source 37">37</a></sup>. The gate was a minimum distance of 20 and a
+                        contrast of at least 3:1 on white and on a dark <code>#121212</code> surface. The first four
+                        Okabe-Ito colours scored 12.5; the shipped palette scores 24.1<sup class="ref"><a href="#src-hh-design" aria-label="Source 39">39</a></sup>.
+                    </p>
+                    <ul class="swatches" aria-label="The hh palette">
+                        <li><span class="sw" style="background:#7A96C5"></span>#7A96C5</li>
+                        <li><span class="sw" style="background:#890AF0"></span>#890AF0</li>
+                        <li><span class="sw" style="background:#C10445"></span>#C10445</li>
+                        <li><span class="sw" style="background:#D48200"></span>#D48200</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="column is-7-desktop">
+                <figure class="figure-card mt-0">
+                    <img src="/assets/img/products/humanized-hash/palette-colour-vision-deficiency.webp" width="1600" height="1000" loading="lazy"
+                         alt="The four-colour palette and four pictures under normal vision, simulated protanopia, deuteranopia, tritanopia and in greyscale">
+                    <figcaption>The palette and four pictures under normal vision, protanopia, deuteranopia, tritanopia and greyscale. In greyscale the shapes carry the picture on their own.</figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Use cases -->
+<section class="section" id="use-cases" aria-labelledby="use-title">
+    <div class="container">
+        <span class="eyebrow">Where it is used</span>
+        <h2 class="title is-3" id="use-title">Anywhere a person checks a long string</h2>
+        <div class="columns is-multiline">
+            <div class="column is-6-tablet is-4-desktop">
+                <div class="card feature-card"><div class="card-content">
+                    <span class="icon is-medium"><i class="fas fa-paper-plane fa-lg" aria-hidden="true"></i></span>
+                    <h3>Sending and confirming</h3>
+                    <p>The recipient's picture stands next to the address field and on the confirmation screen. A swapped or mistyped address changes it completely.</p>
+                </div></div>
+            </div>
+            <div class="column is-6-tablet is-4-desktop">
+                <div class="card feature-card"><div class="card-content">
+                    <span class="icon is-medium"><i class="fas fa-address-book fa-lg" aria-hidden="true"></i></span>
+                    <h3>Address books and account lists</h3>
+                    <p>Every saved payee and every account carries its picture, so a list is scanned instead of read; 32 to 48 px is enough for recognition.</p>
+                </div></div>
+            </div>
+            <div class="column is-6-tablet is-4-desktop">
+                <div class="card feature-card"><div class="card-content">
+                    <span class="icon is-medium"><i class="fas fa-mobile-screen fa-lg" aria-hidden="true"></i></span>
+                    <h3>Two devices of one user</h3>
+                    <p>An offline signer and the online device show the same picture for the same address: two screens compared at a glance instead of 64 characters.</p>
+                </div></div>
+            </div>
+            <div class="column is-6-tablet is-4-desktop">
+                <div class="card feature-card"><div class="card-content">
+                    <span class="icon is-medium"><i class="fas fa-headset fa-lg" aria-hidden="true"></i></span>
+                    <h3>Support, screenshots and voice</h3>
+                    <p>The six-character tag travels through chat and over the phone; the picture travels in a screenshot.</p>
+                </div></div>
+            </div>
+            <div class="column is-6-tablet is-4-desktop">
+                <div class="card feature-card"><div class="card-content">
+                    <span class="icon is-medium"><i class="fas fa-file-invoice fa-lg" aria-hidden="true"></i></span>
+                    <h3>Documents from a server</h3>
+                    <p>The encoders return PNG, BMP or JPEG bytes, so a backend puts the picture into a receipt, an invoice or an email without a graphics library.</p>
+                </div></div>
+            </div>
+            <div class="column is-6-tablet is-4-desktop">
+                <div class="card feature-card"><div class="card-content">
+                    <span class="icon is-medium"><i class="fas fa-fingerprint fa-lg" aria-hidden="true"></i></span>
+                    <h3>Any hash, not only an address</h3>
+                    <p>An SSH or PGP key fingerprint, a TLS certificate pin, an API key, the checksum of a backup or of a firmware image.</p>
+                </div></div>
+            </div>
+        </div>
+        <div class="content section-lead mt-5">
+            <h3 class="title is-5">What it does not do</h3>
+            <ul>
+                <li>It does not replace the text check. Same-looking pictures are evidence; the tag or the full address is certainty.</li>
+                <li>It does not help a user who does not look. A picture that backs a decision is at least 64 px and stands beside the picture it is compared with.</li>
+                <li>Malware that controls the screen, or the application that draws the picture, is out of scope.</li>
+                <li>It cannot tell you that an address belongs to someone, only that it is the same address as last time.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Install -->
+<section class="section is-alt" id="install" aria-labelledby="install-title">
+    <div class="container">
+        <span class="eyebrow">Get started</span>
+        <h2 class="title is-3" id="install-title">Install and quick start</h2>
+        <p class="mb-5 section-lead">The address below gives the tag <code>TKS-PVH</code> and the same 128 px PNG in every language.</p>
+
+        <div class="code-tabs">
+            <div class="tabs is-boxed">
+                <ul role="tablist" aria-label="Language">
+                    <li class="is-active"><a role="tab" id="tab-ts" href="#panel-ts" aria-controls="panel-ts" aria-selected="true">TypeScript</a></li>
+                    <li><a role="tab" id="tab-py" href="#panel-py" aria-controls="panel-py" aria-selected="false">Python</a></li>
+                    <li><a role="tab" id="tab-go" href="#panel-go" aria-controls="panel-go" aria-selected="false">Go</a></li>
+                    <li><a role="tab" id="tab-kt" href="#panel-kt" aria-controls="panel-kt" aria-selected="false">Kotlin / Java</a></li>
+                    <li><a role="tab" id="tab-cpp" href="#panel-cpp" aria-controls="panel-cpp" aria-selected="false">C++</a></li>
+                </ul>
+            </div>
+
+            <div role="tabpanel" id="panel-ts" aria-labelledby="tab-ts" tabindex="0">
+                <h3 class="tab-heading">TypeScript and JavaScript</h3>
+                <div class="code-block"><pre><code>npm install @censync/hh</code></pre></div>
+                <div class="code-block"><pre><code>import { BaseDigest, Fingerprint } from "@censync/hh";
+
+const digest = BaseDigest.ofHex("0x5aAeb6053F3E94C9b9A09f33669435E7Ef1BeAed"); // slow: cache it
+const fingerprint = Fingerprint.universal(digest); // or Fingerprint.keyed(digest, key)
+const image = fingerprint.render(128); // 128 x 128 RGBA pixels
+
+const png: Uint8Array = image.encodePng(); // the same bytes in every implementation
+const tag: string = fingerprint.tag; // "TKSPVH", shown as TKS-PVH</code></pre></div>
+                <p class="panel-note">Browsers, Node.js 20+, Deno and Bun. <a href="https://github.com/censync/hh-ts/blob/main/docs/INTEGRATION.md" rel="noopener">Integration guide</a> with React and Web Worker recipes.</p>
+            </div>
+
+            <div role="tabpanel" id="panel-py" aria-labelledby="tab-py" tabindex="0">
+                <h3 class="tab-heading">Python</h3>
+                <div class="code-block"><pre><code>pip install humanized-hash</code></pre></div>
+                <div class="code-block"><pre><code>from humanized_hash import BaseDigest, Fingerprint
+
+digest = BaseDigest.of_hex("0x5aAeb6053F3E94C9b9A09f33669435E7Ef1BeAed")    # slow: cache it
+fingerprint = Fingerprint.universal(digest)      # or Fingerprint.keyed(digest, key)
+image = fingerprint.render(128)                  # 128 x 128 RGBA pixels, image.rgba
+
+png: bytes = image.encode_png()                  # or image.save("address.png")
+tag: str = fingerprint.tag                       # "TKSPVH", shown as TKS-PVH</code></pre></div>
+                <p class="panel-note">Python 3.9+, CPython and PyPy. Also installs the <code>humanized-hash</code> command. <a href="https://github.com/censync/hh-python/blob/main/docs/INTEGRATION.md" rel="noopener">Integration guide</a>.</p>
+            </div>
+
+            <div role="tabpanel" id="panel-go" aria-labelledby="tab-go" tabindex="0">
+                <h3 class="tab-heading">Go</h3>
+                <div class="code-block"><pre><code>go get github.com/censync/go-hh@v1.1.0</code></pre></div>
+                <div class="code-block"><pre><code>import hh "github.com/censync/go-hh"
+
+digest, err := hh.BaseDigestFromHex("0x5aAeb6053F3E94C9b9A09f33669435E7Ef1BeAed") // slow: cache it
+if err != nil {
+    return err
+}
+fp := hh.Universal(digest)                          // or hh.Keyed(digest, key)
+img, err := hh.Render(fp, 128, hh.RenderOptions{})  // 128 x 128 pixels
+if err != nil {
+    return err
+}
+png, err := img.EncodePNG()                         // or img.NRGBA() for the image packages
+tag := fp.Tag()                                     // "TKSPVH", shown as TKS-PVH</code></pre></div>
+                <p class="panel-note">Go 1.21+. No global state, safe for concurrent use. API reference with runnable examples on <a href="https://pkg.go.dev/github.com/censync/go-hh" rel="noopener">pkg.go.dev</a>.</p>
+            </div>
+
+            <div role="tabpanel" id="panel-kt" aria-labelledby="tab-kt" tabindex="0">
+                <h3 class="tab-heading">Kotlin and Java</h3>
+                <div class="code-block"><pre><code>dependencies {
+    implementation("io.github.censync:hh:1.1.0")
+}</code></pre></div>
+                <div class="code-block"><pre><code>import io.github.censync.hh.*
+
+val digest = BaseDigest.ofHex("0x5aAeb6053F3E94C9b9A09f33669435E7Ef1BeAed")  // slow: cache it
+val fingerprint = Fingerprint.universal(digest)      // or Fingerprint.keyed(digest, key)
+val image = fingerprint.render(128)                  // 128 x 128 pixels
+
+val png: ByteArray = image.encodePng()
+val tag: String = fingerprint.tag                    // "TKSPVH", shown as TKS-PVH</code></pre></div>
+                <p class="panel-note">JVM 8+ and Android API 24+; Kotlin 1.9+. <a href="https://github.com/censync/hh-kotlin/blob/main/docs/INTEGRATION.md" rel="noopener">Integration guide</a> with Android, Compose and desktop recipes.</p>
+            </div>
+
+            <div role="tabpanel" id="panel-cpp" aria-labelledby="tab-cpp" tabindex="0">
+                <h3 class="tab-heading">C++</h3>
+                <div class="code-block"><pre><code>include(FetchContent)
+FetchContent_Declare(hh
+    GIT_REPOSITORY https://github.com/censync/hh-cpp.git
+    GIT_TAG v1.1.0
+)
+FetchContent_MakeAvailable(hh)
+
+target_link_libraries(my_app PRIVATE hh::hh)</code></pre></div>
+                <div class="code-block"><pre><code>#include &lt;hh/hh.hpp&gt;
+
+hh::base_digest digest;   // slow (a few milliseconds), public, cache it per address
+if (hh::make_base_digest_from_hex("0x5aAeb6053F3E94C9b9A09f33669435E7Ef1BeAed", digest) !=
+    hh::error_code::ok) { /* not hexadecimal */ }
+
+hh::fingerprint fp;
+hh::universal_fingerprint(digest, fp);        // or hh::keyed_fingerprint(digest, key, fp)
+
+hh::image img;
+hh::render(fp, 128, hh::render_options{}, img);   // img.rgba: 128 x 128 RGBA pixels
+
+std::vector&lt;std::uint8_t&gt; png;
+hh::encode_png(img, png);
+std::string tag = fp.tag();                   // "TKSPVH", shown as TKS-PVH: a check that is certain</code></pre></div>
+                <p class="panel-note">C++17 with a C ABI; CMake <code>FetchContent</code> or <code>find_package(hh)</code>, pkg-config <code>hh</code>. <a href="https://github.com/censync/hh-cpp/blob/v1.1.0/docs/INTEGRATION.md" rel="noopener">Integration guide</a>.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Repositories -->
+<section class="section" id="repositories" aria-labelledby="repos-title">
+    <div class="container">
+        <span class="eyebrow">Source code</span>
+        <h2 class="title is-3" id="repos-title">GitHub repositories and packages</h2>
+        <p class="mb-5 section-lead">
+            Five implementations, one output: every port produces the same pictures, tags and encoded files, byte for
+            byte, and its tests check it against a copy of the hh-cpp golden vectors. All are MIT-licensed; the
+            current release is 1.1.0.
+        </p>
+        <div class="table-container">
+            <table class="table is-fullwidth is-hoverable is-striped">
+                <caption class="is-sr-only">Humanized Hash repositories, packages and install commands</caption>
+                <thead>
+                <tr>
+                    <th scope="col">Language</th>
+                    <th scope="col">GitHub repository</th>
+                    <th scope="col">Package</th>
+                    <th scope="col">Install</th>
+                    <th scope="col">Release</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">C++17, C ABI<span class="role">reference: specification and golden vectors</span></th>
+                    <td><a href="https://github.com/censync/hh-cpp" rel="noopener">censync/hh-cpp</a></td>
+                    <td><span class="is-wrap">CMake <code>hh::hh</code>, pkg-config <code>hh</code></span><br><a href="https://github.com/censync/hh-cpp/releases" rel="noopener">GitHub Releases</a></td>
+                    <td><span class="is-wrap">CMake <code>FetchContent</code> or <code>find_package(hh)</code></span></td>
+                    <td><a href="https://github.com/censync/hh-cpp/releases/tag/v1.1.0" rel="noopener">v1.1.0</a></td>
+                </tr>
+                <tr>
+                    <th scope="row">Kotlin and Java<span class="role">JVM, Android</span></th>
+                    <td><a href="https://github.com/censync/hh-kotlin" rel="noopener">censync/hh-kotlin</a></td>
+                    <td><a href="https://central.sonatype.com/artifact/io.github.censync/hh" rel="noopener">Maven Central <code>io.github.censync:hh</code></a></td>
+                    <td><code>implementation("io.github.censync:hh:1.1.0")</code></td>
+                    <td><a href="https://github.com/censync/hh-kotlin/releases/tag/v1.1.0" rel="noopener">v1.1.0</a></td>
+                </tr>
+                <tr>
+                    <th scope="row">TypeScript and JavaScript<span class="role">browsers, Node.js, Deno, Bun</span></th>
+                    <td><a href="https://github.com/censync/hh-ts" rel="noopener">censync/hh-ts</a></td>
+                    <td><a href="https://www.npmjs.com/package/@censync/hh" rel="noopener">npm <code>@censync/hh</code></a></td>
+                    <td><code>npm install @censync/hh</code></td>
+                    <td><a href="https://github.com/censync/hh-ts/releases/tag/v1.1.0" rel="noopener">v1.1.0</a></td>
+                </tr>
+                <tr>
+                    <th scope="row">Go</th>
+                    <td><a href="https://github.com/censync/go-hh" rel="noopener">censync/go-hh</a></td>
+                    <td><a href="https://pkg.go.dev/github.com/censync/go-hh" rel="noopener">pkg.go.dev <code>github.com/censync/go-hh</code></a></td>
+                    <td><code>go get github.com/censync/go-hh</code></td>
+                    <td><a href="https://github.com/censync/go-hh/releases/tag/v1.1.0" rel="noopener">v1.1.0</a></td>
+                </tr>
+                <tr>
+                    <th scope="row">Python</th>
+                    <td><a href="https://github.com/censync/hh-python" rel="noopener">censync/hh-python</a></td>
+                    <td><a href="https://pypi.org/project/humanized-hash/" rel="noopener">PyPI <code>humanized-hash</code></a></td>
+                    <td><code>pip install humanized-hash</code></td>
+                    <td><a href="https://github.com/censync/hh-python/releases/tag/v1.1.0" rel="noopener">v1.1.0</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="columns is-variable is-6 mt-5">
+            <div class="column is-6">
+                <h3 class="title is-5">Documentation</h3>
+                <ul class="content">
+                    <li><a href="https://github.com/censync/hh-cpp/blob/v1.1.0/docs/SPEC.md" rel="noopener">Specification</a>: the algorithm, the encoders and the error codes every port implements.</li>
+                    <li><a href="https://github.com/censync/hh-cpp/blob/v1.1.0/docs/SECURITY.md" rel="noopener">Security model</a>: what a picture proves and what it does not, and when to use which mode.</li>
+                    <li><a href="https://github.com/censync/hh-cpp/blob/v1.1.0/docs/INTEGRATION.md" rel="noopener">Integration guide</a>: sizes, placement and the product rules.</li>
+                    <li><a href="https://github.com/censync/hh-cpp/tree/v1.1.0/docs/design" rel="noopener">Design lab</a>: palette gate, grinding experiments and benchmarks, including the ideas that failed.</li>
+                </ul>
+            </div>
+            <div class="column is-6">
+                <h3 class="title is-5">Read more</h3>
+                <a class="box" href="https://medium.com/@censync_dev/nobody-reads-42-characters-6b84726faff0" rel="noopener">
+                    <span class="eyebrow"><i class="fab fa-medium" aria-hidden="true"></i> Medium</span>
+                    <strong class="is-block is-size-5">Wallet address spoofing attacks: Nobody reads 42 characters</strong>
+                    <span class="is-block mt-1">Address poisoning and clipboard hijackers make the same bet: that you look at the first few characters of an address, the last few, and nothing in between. Dmitry Mandrika, 23 September 2026.</span>
+                </a>
+                <p class="is-size-7 mt-3">
+                    Found a pair of addresses whose pictures a person would confuse? Report it through
+                    <a href="https://github.com/censync/hh-cpp/security/advisories/new" rel="noopener">private vulnerability reporting</a> on GitHub.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Other products -->
+<section class="section is-alt" aria-labelledby="more-title">
+    <div class="container">
+        <h2 class="title is-4" id="more-title">More from CenSync</h2>
+        <div class="columns">
+            <div class="column is-6-desktop">
+                <a class="card product-card" href="/products/mhda/">
+                    <div class="card-content">
+                        <div class="media">
+                            <div class="media-left"><span class="thumb thumb-mono">urn:</span></div>
+                            <div class="media-content">
+                                <h3 class="title is-5 mb-2">MHDA</h3>
+                                <p>MultiChain Hierarchical Deterministic Address: one RFC 8141 URN that describes a derived blockchain address. Go and C++17.</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Sources -->
+<section class="section pt-5" id="sources" aria-labelledby="sources-title">
+    <div class="container">
+        <div class="sources">
+            <h2 id="sources-title">Sources</h2>
+            <p>The research behind Humanized Hash and every figure on this page. Links were checked in September 2026; the forgery-cost figures are calculations, not a measured attack.</p>
+            <h3>Address poisoning</h3>
+            <ol start="1">
+                <li id="src-coindesk-wbtc">CoinDesk. 1,155 WBTC, about $68M, sent to a lookalike address after a 0.05 ETH test. 3 May 2024. <a href="https://www.coindesk.com/business/2024/05/03/exploiter-steals-68m-worth-of-crypto-through-address-poisoning" rel="noopener nofollow">coindesk.com/business/2024/05/03/exploiter-steals-68m-worth-of-crypto-through-address-poisoning</a></li>
+                <li id="src-blockaid-deep-dive">Blockaid. A deep dive into address poisoning: the real and the attacker's address of the WBTC case. <a href="https://www.blockaid.io/blog/a-deep-dive-into-address-poisoning" rel="noopener nofollow">blockaid.io/blog/a-deep-dive-into-address-poisoning</a></li>
+                <li id="src-cointelegraph-return">Cointelegraph. About 22,960 ETH returned after a 10% bounty offer. May 2024. <a href="https://cointelegraph.com/news/wbtc-address-poisoner-all-funds-negotiations" rel="noopener nofollow">cointelegraph.com/news/wbtc-address-poisoner-all-funds-negotiations</a></li>
+                <li id="src-chainalysis">Chainalysis. Anatomy of an address poisoning scam: 82,031 seeded addresses, net profit $1.49M. 2024. <a href="https://www.chainalysis.com/blog/address-poisoning-scam/" rel="noopener nofollow">chainalysis.com/blog/address-poisoning-scam/</a></li>
+                <li id="src-tsuchiya">Tsuchiya, Dong, Soska, Christin. <em>Blockchain Address Poisoning</em>. USENIX Security 2025. <a href="https://www.usenix.org/system/files/usenixsecurity25-tsuchiya.pdf" rel="noopener nofollow">usenix.org/system/files/usenixsecurity25-tsuchiya.pdf</a></li>
+                <li id="src-etherscan">Etherscan. What is address poisoning: a zero-value <code>transferFrom</code> needs no allowance. <a href="https://info.etherscan.com/what-is-address-poisoning/" rel="noopener nofollow">info.etherscan.com/what-is-address-poisoning/</a></li>
+                <li id="src-coindesk-usdt">CoinDesk. A 50 USDT test, then 49,999,950 USDT to a lookalike. 20 December 2025. <a href="https://www.coindesk.com/web3/2025/12/20/crypto-user-loses-usd50-million-in-address-poisoning-scam" rel="noopener nofollow">coindesk.com/web3/2025/12/20/crypto-user-loses-usd50-million-in-address-poisoning-scam</a></li>
+                <li id="src-protos">Protos. The same $50M USDT case. December 2025. <a href="https://protos.com/crypto-trader-loses-50m-usdt-to-address-poisoning-scam/" rel="noopener nofollow">protos.com/crypto-trader-loses-50m-usdt-to-address-poisoning-scam/</a></li>
+                <li id="src-blockaid-growth">Blockaid. Address poisoning: the growing threat. 628,000 attempts in November 2025, 3.4 million in January 2026. <a href="https://blockaid.io/blog/address-poisoning-the-growing-threat-draining-millions-from-crypto-users" rel="noopener nofollow">blockaid.io/blog/address-poisoning-the-growing-threat-draining-millions-from-crypto-users</a></li>
+                <li id="src-coinmetrics">Coin Metrics. State of the Network, issue 349: dust is about 11% of Ethereum transactions. 2026. <a href="https://coinmetrics.substack.com/p/state-of-the-network-issue-349" rel="noopener nofollow">coinmetrics.substack.com/p/state-of-the-network-issue-349</a></li>
+                <li id="src-trezor">Trezor. Address poisoning attacks: “carefully check every character”. <a href="https://trezor.io/support/troubleshooting/coins-tokens/address-poisoning-attacks" rel="noopener nofollow">trezor.io/support/troubleshooting/coins-tokens/address-poisoning-attacks</a></li>
+                <li id="src-ledger">Ledger. Address poisoning: “people are not machines”. <a href="https://www.ledger.com/blog/address-poisoning" rel="noopener nofollow">ledger.com/blog/address-poisoning</a></li>
+                <li id="src-metamask">MetaMask. Address poisoning detection: truncation “is the exact blind spot scammers exploit”. 17 June 2026. <a href="https://metamask.io/news/address-poisoning-detection" rel="noopener nofollow">metamask.io/news/address-poisoning-detection</a></li>
+                <li id="src-profanity2">1inch. profanity2: 1,361 million addresses per second on an RTX 4090, self-reported. <a href="https://github.com/1inch/profanity2" rel="noopener nofollow">github.com/1inch/profanity2</a></li>
+            </ol>
+            <h3>Clipboard and in-application substitution</h3>
+            <ol start="15">
+                <li id="src-kaspersky-cryptoshuffler">Kaspersky. CryptoShuffler: 23 BTC stolen through the clipboard. 2017. <a href="https://www.kaspersky.com/blog/cryptoshuffler-bitcoin-stealer/19976/" rel="noopener nofollow">kaspersky.com/blog/cryptoshuffler-bitcoin-stealer/19976/</a></li>
+                <li id="src-unit42-combojack">Palo Alto Networks Unit 42. ComboJack checks the clipboard every half second. 2018. <a href="https://unit42.paloaltonetworks.com/unit42-sure-ill-take-new-combojack-malware-alters-clipboards-steal-cryptocurrency/" rel="noopener nofollow">unit42.paloaltonetworks.com/unit42-sure-ill-take-new-combojack-malware-alters-clipboards-steal-cryptocurrency/</a></li>
+                <li id="src-bleeping-23m">Bleeping Computer. A clipboard hijacker working with over 2.3 million addresses. 2018. <a href="https://www.bleepingcomputer.com/news/security/clipboard-hijacker-malware-monitors-23-million-bitcoin-addresses/" rel="noopener nofollow">bleepingcomputer.com/news/security/clipboard-hijacker-malware-monitors-23-million-bitcoin-addresses/</a></li>
+                <li id="src-eset-google-play">ESET. The first clipper on Google Play, a fake MetaMask. February 2019. <a href="https://www.welivesecurity.com/2019/02/08/first-clipper-malware-google-play/" rel="noopener nofollow">welivesecurity.com/2019/02/08/first-clipper-malware-google-play/</a></li>
+                <li id="src-securelist-tor">Kaspersky Securelist. <em>Copy-paste heist</em>: a clipper in a trojanized Tor Browser, about 16,000 detections in 52 countries. 2023. <a href="https://securelist.com/copy-paste-heist-clipboard-injector-targeting-cryptowallets/109186/" rel="noopener nofollow">securelist.com/copy-paste-heist-clipboard-injector-targeting-cryptowallets/109186/</a></li>
+                <li id="src-kaspersky-tor-press">Kaspersky. About $400,000 stolen through the fake Tor Browser in 2023. <a href="https://www.kaspersky.com/about/press-releases/new-clipper-malware-steals-us400000-in-cryptocurrencies-via-fake-tor-browser" rel="noopener nofollow">kaspersky.com/about/press-releases/new-clipper-malware-steals-us400000-in-cryptocurrencies-via-fake-tor-browser</a></li>
+                <li id="src-cyble-laplas">Cyble. Laplas Clipper asks its server for a lookalike of the copied address. 2022. <a href="https://cyble.com/blog/new-laplas-clipper-distributed-by-smokeloader/" rel="noopener nofollow">cyble.com/blog/new-laplas-clipper-distributed-by-smokeloader/</a></li>
+                <li id="src-bleeping-laplas">Bleeping Computer. A Laplas test: the returned address matched the first and last characters in about 5 seconds. 2022. <a href="https://www.bleepingcomputer.com/news/security/new-clipboard-hijacker-replaces-crypto-wallet-addresses-with-lookalikes/" rel="noopener nofollow">bleepingcomputer.com/news/security/new-clipboard-hijacker-replaces-crypto-wallet-addresses-with-lookalikes/</a></li>
+                <li id="src-microsoft-clipper">Microsoft Security. A clipper that substitutes a Bitcoin address with the same first two characters. 17 June 2026. <a href="https://www.microsoft.com/en-us/security/blog/2026/06/17/crypto-clipper-uses-tor-worm-like-propagation-for-persistence-control/" rel="noopener nofollow">microsoft.com/en-us/security/blog/2026/06/17/crypto-clipper-uses-tor-worm-like-propagation-for-persistence-control/</a></li>
+                <li id="src-checkpoint-clipper">Check Point Research. A Rust clipper with over 15,500 embedded addresses. 17 June 2026. <a href="https://research.checkpoint.com/2026/from-stars-to-upvotes-fake-reputation-fueling-a-crypto-clipboard-hijacker/" rel="noopener nofollow">research.checkpoint.com/2026/from-stars-to-upvotes-fake-reputation-fueling-a-crypto-clipboard-hijacker/</a></li>
+                <li id="src-aikido-npm">Aikido. npm <code>debug</code> and <code>chalk</code> packages compromised: the replacement chosen by Levenshtein distance. 8 September 2025. <a href="https://www.aikido.dev/blog/npm-debug-and-chalk-packages-compromised" rel="noopener nofollow">aikido.dev/blog/npm-debug-and-chalk-packages-compromised</a></li>
+                <li id="src-seal-npm">Security Alliance. Incident analysis: 280 hardcoded attacker addresses. September 2025. <a href="https://radar.securityalliance.org/2025-09-npm-supply-chain" rel="noopener nofollow">radar.securityalliance.org/2025-09-npm-supply-chain</a></li>
+                <li id="src-reversinglabs">ReversingLabs. An npm package that patches installed Atomic and Exodus wallets. April 2025. <a href="https://www.reversinglabs.com/blog/atomic-and-exodus-crypto-wallets-targeted-in-malicious-npm-campaign" rel="noopener nofollow">reversinglabs.com/blog/atomic-and-exodus-crypto-wallets-targeted-in-malicious-npm-campaign</a></li>
+                <li id="src-drweb">Doctor Web. Counterfeit Android phones with a WhatsApp that swaps addresses inside messages. April 2025. <a href="https://news.drweb.com/show/?i=15002&amp;lng=en&amp;c=5" rel="noopener nofollow">news.drweb.com/show/?i=15002&amp;lng=en&amp;c=5</a></li>
+            </ol>
+            <h3>How people compare strings and pictures</h3>
+            <ol start="29">
+                <li id="src-cherubini">Cherubini et al. <em>Towards Usable Checksums</em>. CCS 2018. <a href="https://mhumbert.com/publications/ccs18.pdf" rel="noopener nofollow">mhumbert.com/publications/ccs18.pdf</a></li>
+                <li id="src-tan">Tan et al. <em>Can Unicorns Help Users Compare Crypto Key Fingerprints?</em> CHI 2017. <a href="https://www.blaseur.com/papers/chi2017-fingerprints.pdf" rel="noopener nofollow">blaseur.com/papers/chi2017-fingerprints.pdf</a></li>
+                <li id="src-hsiao">Hsiao et al. <em>A Study of User-Friendly Hash Comparison Schemes</em>. ACSAC 2009. <a href="https://netsec.ethz.ch/publications/papers/visual_hash_acsac09.pdf" rel="noopener nofollow">netsec.ethz.ch/publications/papers/visual_hash_acsac09.pdf</a></li>
+                <li id="src-olembo">Olembo et al. <em>Developing and Testing a Visual Hash Scheme</em>. 2013.</li>
+                <li id="src-metamask-jazzicon">MetaMask extension source, <code>icon-factory.ts</code>: the Jazzicon seed. “Same eight digits, same icon” is our reading of the code, not a published demonstration. <a href="https://raw.githubusercontent.com/MetaMask/metamask-extension/main/ui/helpers/utils/icon-factory.ts" rel="noopener nofollow">raw.githubusercontent.com/MetaMask/metamask-extension/main/ui/helpers/utils/icon-factory.ts</a></li>
+                <li id="src-blockie-miner">Austin Griffith. Blockie miner: a lookalike after 45 minutes. <a href="https://austingriffith.com/portfolio/blockieminer/" rel="noopener nofollow">austingriffith.com/portfolio/blockieminer/</a></li>
+            </ol>
+            <h3>Colour vision</h3>
+            <ol start="35">
+                <li id="src-petroff">Petroff. <em>Accessible Color Sequences for Data Visualization</em>. 2021.</li>
+                <li id="src-machado">Machado, Oliveira, Fernandes. <em>A Physiologically-based Model for Simulation of Color Vision Deficiency</em>. 2009.</li>
+                <li id="src-brettel">Brettel et al. 1997: the tritanopia simulation.</li>
+            </ol>
+            <h3>Figures from the hh project</h3>
+            <ol start="38">
+                <li id="src-hh-security">hh-cpp, <code>docs/SECURITY.md</code>: 68 nominal bits, 44 in shape; 16,384 PBKDF2 iterations; forgery-cost estimates. <a href="https://github.com/censync/hh-cpp/blob/v1.1.0/docs/SECURITY.md" rel="noopener nofollow">github.com/censync/hh-cpp/blob/v1.1.0/docs/SECURITY.md</a></li>
+                <li id="src-hh-design">hh-cpp, <code>docs/design</code>: benchmarks, the grinding experiment and the palette gate. <a href="https://github.com/censync/hh-cpp/tree/v1.1.0/docs/design" rel="noopener nofollow">github.com/censync/hh-cpp/tree/v1.1.0/docs/design</a></li>
+            </ol>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<footer class="footer has-background-dark has-text-light">
+    <div class="container">
+        <div class="columns is-multiline">
+            <div class="column is-12-mobile is-12-tablet is-4-desktop has-text-centered-mobile">
+                <p class="title is-5 has-text-light mb-3">
+                    <span class="icon-text">
+                        <span class="icon has-text-warning"><i class="fas fa-bolt" aria-hidden="true"></i></span>
+                        <span>CenSync</span>
+                    </span>
+                </p>
+                <p class="has-text-grey-light">
+                    Expert developers of distributed systems, secured blockchain solutions, and cutting-edge fintech
+                    applications.
+                </p>
+            </div>
+            <div class="column is-12-mobile is-4-tablet is-3-desktop has-text-centered-mobile">
+                <p class="title is-6 has-text-light mb-3">Quick Links</p>
+                <ul class="footer-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/#services">Services</a></li>
+                    <li><a href="/#solutions">Solutions</a></li>
+                    <li><a href="/#technologies">Technologies</a></li>
+                </ul>
+            </div>
+            <div class="column is-12-mobile is-4-tablet is-3-desktop has-text-centered-mobile">
+                <p class="title is-6 has-text-light mb-3">Products</p>
+                <ul class="footer-links">
+                    <li><a href="/products/">All products</a></li>
+                    <li><a href="/products/humanized-hash/">Humanized Hash (hh)</a></li>
+                    <li><a href="/products/mhda/">MHDA</a></li>
+                </ul>
+            </div>
+            <div class="column is-12-mobile is-4-tablet is-2-desktop has-text-centered-mobile">
+                <p class="title is-6 has-text-light mb-3">Connect</p>
+                <div class="social-links is-justify-content-center-mobile">
+                    <a href="https://github.com/censync" class="button is-dark is-small" rel="noopener" aria-label="CenSync on GitHub">
+                        <span class="icon"><i class="fab fa-github" aria-hidden="true"></i></span>
+                    </a>
+                    <a href="mailto:dev@censync.com" class="button is-dark is-small" aria-label="Email dev@censync.com">
+                        <span class="icon"><i class="fas fa-at" aria-hidden="true"></i></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <hr class="has-background-grey-dark">
+        <div class="content has-text-centered has-text-grey-light">
+            <p>© 2026 CenSync. Building the future of decentralized systems.</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en" class="has-navbar-fixed-top">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>MHDA: URN format for multichain HD addresses | CenSync</title>
+    <meta name="description" content="MHDA is an RFC 8141 URN that describes a blockchain HD address: network, derivation path, curve, format and wallet context. 14 networks, Go and C++17, MIT.">
+    <meta name="keywords" content="MHDA, MultiChain Hierarchical Deterministic Address, HD wallet, derivation path, URN, RFC 8141, BIP-32, BIP-44, BIP-86, SLIP-10, SLIP-44, CIP-1852, go-mhda, multichain wallet">
+    <meta name="author" content="CenSync">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <link rel="canonical" href="https://censync.com/products/mhda/">
+    <meta name="theme-color" content="#1a1a2e">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="CenSync">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:url" content="https://censync.com/products/mhda/">
+    <meta property="og:title" content="MHDA: MultiChain Hierarchical Deterministic Address">
+    <meta property="og:description" content="One RFC 8141 URN that captures network, derivation path, curve, encoding format and wallet context of a derived blockchain address. 14 networks. Go reference and C++17 port, MIT.">
+    <meta property="og:image" content="https://censync.com/assets/img/products/og/mhda.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="MHDA: MultiChain Hierarchical Deterministic Address, with an example Bitcoin Taproot URN">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MHDA: MultiChain Hierarchical Deterministic Address">
+    <meta name="twitter:description" content="One RFC 8141 URN that captures network, derivation path, curve, encoding format and wallet context of a derived blockchain address. 14 networks. Go reference and C++17 port, MIT.">
+    <meta name="twitter:image" content="https://censync.com/assets/img/products/og/mhda.png">
+    <meta name="twitter:image:alt" content="MHDA: MultiChain Hierarchical Deterministic Address, with an example Bitcoin Taproot URN">
+
+    <!-- Icons -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='75' font-size='80'%3E⚡%3C/text%3E%3C/svg%3E">
+    <link rel="manifest" href="/manifest.json">
+
+    <!-- Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&amp;display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css" integrity="sha384-DCY3M8xLkMu6c9IKcKbe+jHKMjelnwC0p+SBaxfHxoBYZWdJF2X400UdBCgATtAB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha384-iw3OoTErCYJJB9mCa8LNS2hbsQ7M3C0EpIsO/H5+EGAkPGc6rk+V8i04oW/K5xq0" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/css/products.css?v=e14db0e7b2">
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://censync.com/#organization",
+      "name": "CenSync",
+      "url": "https://censync.com/",
+      "email": "dev@censync.com",
+      "sameAs": [
+        "https://github.com/censync"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://censync.com/#website",
+      "url": "https://censync.com/",
+      "name": "CenSync",
+      "publisher": {
+        "@id": "https://censync.com/#organization"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "ItemPage",
+      "@id": "https://censync.com/products/mhda/#webpage",
+      "url": "https://censync.com/products/mhda/",
+      "name": "MHDA: URN format for multichain HD addresses | CenSync",
+      "description": "MHDA is an RFC 8141 URN that describes a blockchain HD address: network, derivation path, curve, format and wallet context. 14 networks, Go and C++17, MIT.",
+      "isPartOf": {
+        "@id": "https://censync.com/#website"
+      },
+      "breadcrumb": {
+        "@id": "https://censync.com/products/mhda/#breadcrumb"
+      },
+      "inLanguage": "en",
+      "datePublished": "2026-09-29",
+      "dateModified": "2026-09-29",
+      "primaryImageOfPage": {
+        "@id": "https://censync.com/products/mhda/#primaryimage"
+      },
+      "about": {
+        "@id": "https://censync.com/products/mhda/#software"
+      },
+      "mainEntity": {
+        "@id": "https://censync.com/products/mhda/#software"
+      }
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://censync.com/products/mhda/#primaryimage",
+      "url": "https://censync.com/assets/img/products/og/mhda.png",
+      "contentUrl": "https://censync.com/assets/img/products/og/mhda.png",
+      "width": 1200,
+      "height": 630,
+      "caption": "MHDA: MultiChain Hierarchical Deterministic Address, with an example Bitcoin Taproot URN"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://censync.com/products/mhda/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://censync.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Products",
+          "item": "https://censync.com/products/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "MHDA",
+          "item": "https://censync.com/products/mhda/"
+        }
+      ]
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "@id": "https://censync.com/products/mhda/#software",
+      "name": "MHDA",
+      "alternateName": "MultiChain Hierarchical Deterministic Address",
+      "description": "A URN-based descriptor for blockchain HD addresses, compatible with RFC 8141: network, derivation scheme, path, signature curve, encoding format, prefix and suffix conventions, and an optional wallet context in one string.",
+      "url": "https://censync.com/products/mhda/",
+      "codeRepository": "https://github.com/censync/go-mhda",
+      "programmingLanguage": [
+        {
+          "@type": "ComputerLanguage",
+          "name": "Go"
+        },
+        {
+          "@type": "ComputerLanguage",
+          "name": "C++"
+        }
+      ],
+      "version": "1.1.0",
+      "license": "https://opensource.org/licenses/MIT",
+      "isAccessibleForFree": true,
+      "keywords": [
+        "HD wallet",
+        "derivation path",
+        "URN",
+        "RFC 8141",
+        "BIP-32",
+        "BIP-44",
+        "SLIP-10",
+        "SLIP-44",
+        "multichain"
+      ],
+      "author": {
+        "@id": "https://censync.com/#organization"
+      },
+      "publisher": {
+        "@id": "https://censync.com/#organization"
+      },
+      "image": {
+        "@id": "https://censync.com/products/mhda/#primaryimage"
+      },
+      "hasPart": [
+        {
+          "@id": "https://censync.com/products/mhda/#go-mhda"
+        },
+        {
+          "@id": "https://censync.com/products/mhda/#mhda-cpp"
+        }
+      ],
+      "subjectOf": {
+        "@type": "TechArticle",
+        "headline": "MHDA Specification",
+        "url": "https://github.com/censync/go-mhda/blob/v1.1.0/SPEC.md"
+      }
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "@id": "https://censync.com/products/mhda/#go-mhda",
+      "name": "go-mhda",
+      "description": "MHDA for Go: the normative reference implementation and the specification.",
+      "codeRepository": "https://github.com/censync/go-mhda",
+      "programmingLanguage": [
+        {
+          "@type": "ComputerLanguage",
+          "name": "Go"
+        }
+      ],
+      "runtimePlatform": "Go 1.18+",
+      "version": "1.1.0",
+      "license": "https://opensource.org/licenses/MIT",
+      "publisher": {
+        "@id": "https://censync.com/#organization"
+      },
+      "sameAs": [
+        "https://pkg.go.dev/github.com/censync/go-mhda"
+      ],
+      "isPartOf": {
+        "@id": "https://censync.com/products/mhda/#software"
+      },
+      "author": {
+        "@id": "https://censync.com/#organization"
+      }
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "@id": "https://censync.com/products/mhda/#mhda-cpp",
+      "name": "mhda",
+      "description": "MHDA for C++17: a faithful port of go-mhda with a bit-identical URN format and validation rules.",
+      "codeRepository": "https://github.com/censync/mhda",
+      "programmingLanguage": [
+        {
+          "@type": "ComputerLanguage",
+          "name": "C++"
+        }
+      ],
+      "runtimePlatform": "C++17",
+      "version": "1.1.0",
+      "license": "https://opensource.org/licenses/MIT",
+      "publisher": {
+        "@id": "https://censync.com/#organization"
+      },
+      "sameAs": [
+        "https://github.com/censync/mhda/releases"
+      ],
+      "isPartOf": {
+        "@id": "https://censync.com/products/mhda/#software"
+      },
+      "author": {
+        "@id": "https://censync.com/#organization"
+      },
+      "isBasedOn": {
+        "@id": "https://censync.com/products/mhda/#go-mhda"
+      }
+    }
+  ]
+}
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B4X009BE1F"></script>
+    <script src="/assets/js/products.js?v=dd9725e141" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<nav class="navbar is-fixed-top is-dark" aria-label="Main navigation">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+                <span class="icon-text">
+                    <span class="icon has-text-warning"><i class="fas fa-bolt" aria-hidden="true"></i></span>
+                    <span class="has-text-weight-bold is-size-4">CenSync</span>
+                </span>
+            </a>
+            <button type="button" class="navbar-burger" aria-label="Menu" aria-expanded="false" aria-controls="navbarMenu" data-target="navbarMenu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </button>
+        </div>
+        <div id="navbarMenu" class="navbar-menu">
+            <div class="navbar-end">
+                <a class="navbar-item" href="/">Home</a>
+                <a class="navbar-item" href="/#services">Services</a>
+                <a class="navbar-item" href="/#solutions">Solutions</a>
+                <a class="navbar-item" href="/#technologies">Technologies</a>
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link is-active" href="/products/">Products</a>
+                    <div class="navbar-dropdown is-right">
+                        <a class="navbar-item" href="/products/humanized-hash/">Humanized Hash (hh)</a>
+                        <a class="navbar-item is-active" aria-current="page" href="/products/mhda/">MHDA</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<main id="main">
+
+<!-- Hero -->
+<section class="hero product-hero">
+    <div class="hero-body">
+        <div class="container">
+            <nav class="breadcrumb is-small mb-5" aria-label="Breadcrumb">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/products/">Products</a></li>
+                    <li class="is-active"><a href="/products/mhda/" aria-current="page">MHDA</a></li>
+                </ul>
+            </nav>
+            <div class="columns is-vcentered is-variable is-8">
+                <div class="column is-12-tablet is-6-desktop">
+                    <span class="eyebrow">Open-source format and libraries · v1.1.0</span>
+                    <h1 class="title is-1">MHDA <span class="has-gradient-text is-block is-size-3 mt-2">MultiChain Hierarchical Deterministic Address</span></h1>
+                    <p class="subtitle is-5 mt-4">
+                        A URN-based descriptor for blockchain HD addresses, compatible with
+                        <strong>RFC 8141</strong>. A single string captures everything needed to identify a derived
+                        address: network, derivation scheme, path, signature curve, encoding format, prefix and suffix
+                        conventions, and an optional wallet context.
+                    </p>
+                    <div class="hero-meta" aria-label="Key facts">
+                        <span class="tag is-gold">MIT licence</span>
+                        <span class="tag">Go reference · C++17 port</span>
+                        <span class="tag">14 networks</span>
+                        <span class="tag">Zero dependencies</span>
+                    </div>
+                    <div class="buttons mt-5">
+                        <a class="button is-gold" href="#install">
+                            <span class="icon"><i class="fas fa-download" aria-hidden="true"></i></span><span>Install</span>
+                        </a>
+                        <a class="button is-ghost-light" href="https://github.com/censync/go-mhda" rel="noopener">
+                            <span class="icon"><i class="fab fa-github" aria-hidden="true"></i></span><span>GitHub</span>
+                        </a>
+                        <a class="button is-ghost-light" href="https://github.com/censync/go-mhda/blob/v1.1.0/SPEC.md" rel="noopener">
+                            <span class="icon"><i class="fas fa-book" aria-hidden="true"></i></span><span>Specification</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="column is-12-tablet is-6-desktop">
+                    <p class="is-size-7 has-text-grey-light mb-2">A Taproot address on Bitcoin, BIP-86 path, bech32m:</p>
+                    <div class="hero-urn" aria-label="Example MHDA URN">
+                        <span class="p">urn:mhda:</span><span class="k">nt:</span>bitcoin<span class="p">:</span><wbr><span class="k">ci:</span>bitcoin<span class="p">:</span><wbr><span class="k">dt:</span>bip86<span class="p">:</span><wbr><span class="k">dp:</span>m/86'/0'/0'/0/0<span class="p">:</span><wbr><span class="k">af:</span>bech32m<span class="p">:</span><wbr><span class="k">ap:</span>bc1p
+                    </div>
+                    <p class="is-size-7 has-text-grey-light mt-4 mb-2">An EVM address bound to a wallet context:</p>
+                    <div class="hero-urn" aria-label="Example MHDA URN with a wallet domain">
+                        <span class="p">urn:mhda:</span><span class="k">nt:</span>evm<span class="p">:</span><wbr><span class="k">ci:</span>1<span class="p">:</span><wbr><span class="k">dt:</span>bip44<span class="p">:</span><wbr><span class="k">dp:</span>m/44'/60'/0'/0/0<span class="p">:</span><wbr><span class="k">wt:</span>web3<span class="p">:</span><wbr><span class="k">wi:</span>5f2a8c31
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Anatomy -->
+<section class="section" id="format" aria-labelledby="format-title">
+    <div class="container">
+        <span class="eyebrow">The format</span>
+        <h2 class="title is-3" id="format-title">One string for a derived address</h2>
+        <div class="content section-lead">
+            <p>
+                MHDA unifies the encoding of derivation paths, signature curves and address formats across EVM,
+                Bitcoin, Cosmos, Solana, XRP Ledger, Stellar, NEAR, Aptos, Sui, Cardano, Algorand and TON. The chain
+                identity is the <code>(nt, ci)</code> pair; the SLIP-44 coin type is an optional <code>ct</code>
+                annotation, because for HD addresses the coin already lives in the derivation path.
+            </p>
+        </div>
+        <div class="table-container">
+            <table class="table is-fullwidth is-hoverable is-striped">
+                <caption class="is-sr-only">MHDA URN components</caption>
+                <thead>
+                <tr><th scope="col">Key</th><th scope="col">Component</th><th scope="col">Required</th><th scope="col">Default</th></tr>
+                </thead>
+                <tbody>
+                <tr><td><code>nt</code></td><td>Network type</td><td>yes</td><td>–</td></tr>
+                <tr><td><code>ci</code></td><td>Chain ID</td><td>yes</td><td>–</td></tr>
+                <tr><td><code>ct</code></td><td>Coin type (SLIP-44)</td><td>no</td><td>none (metadata)</td></tr>
+                <tr><td><code>dt</code></td><td>Derivation type</td><td>no</td><td><code>root</code></td></tr>
+                <tr><td><code>dp</code></td><td>Derivation path</td><td>no</td><td>empty when <code>dt=root</code></td></tr>
+                <tr><td><code>aa</code></td><td>Address algorithm</td><td>no</td><td>per-network default</td></tr>
+                <tr><td><code>af</code></td><td>Address format</td><td>no</td><td>per-network default</td></tr>
+                <tr><td><code>ap</code></td><td>Address prefix</td><td>no</td><td>none</td></tr>
+                <tr><td><code>as</code></td><td>Address suffix</td><td>no</td><td>none</td></tr>
+                <tr><td><code>wt</code></td><td>Wallet type</td><td>no</td><td>none</td></tr>
+                <tr><td><code>wi</code></td><td>Wallet ID</td><td>no</td><td>none</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="columns is-multiline mt-5">
+            <div class="column is-6-tablet is-4-desktop">
+                <div class="card feature-card"><div class="card-content">
+                    <span class="icon is-medium"><i class="fas fa-arrow-down-short-wide fa-lg" aria-hidden="true"></i></span>
+                    <h3>Canonical order, any input order</h3>
+                    <p>The chain identity comes first, so a chain key is always a strict prefix of the URN. Parsers accept any order on input; optional components are emitted only when set.</p>
+                </div></div>
+            </div>
+            <div class="column is-6-tablet is-4-desktop">
+                <div class="card feature-card"><div class="card-content">
+                    <span class="icon is-medium"><i class="fas fa-rotate fa-lg" aria-hidden="true"></i></span>
+                    <h3>Exact round-trip</h3>
+                    <p>For canonical input <code>Parse(s).String() == s</code>. A short form round-trips to the same short form, a long form to the same long form. Hardening markers <code>'</code>, <code>H</code> and <code>h</code> are all accepted.</p>
+                </div></div>
+            </div>
+            <div class="column is-6-tablet is-4-desktop">
+                <div class="card feature-card"><div class="card-content">
+                    <span class="icon is-medium"><i class="fas fa-wallet fa-lg" aria-hidden="true"></i></span>
+                    <h3>Wallet domain</h3>
+                    <p><code>wt</code> names the client or protocol (<code>web3</code>, <code>tonconnect</code>), <code>wi</code> the wallet instance, e.g. a UUID or an HD root key fingerprint. Setters reject <code>:</code>, <code>?</code>, <code>#</code> and whitespace.</p>
+                </div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Networks -->
+<section class="section is-alt" id="networks" aria-labelledby="networks-title">
+    <div class="container">
+        <span class="eyebrow">Coverage</span>
+        <h2 class="title is-3" id="networks-title">Supported networks</h2>
+        <p class="mb-5 section-lead">
+            Every network registers its algorithms, formats and derivation types. Strict validation requires the
+            resolved combination to be in this matrix; <code>root</code>, the non-HD form, is accepted on every network.
+        </p>
+        <div class="table-container">
+            <table class="table is-fullwidth is-hoverable is-striped">
+                <caption class="is-sr-only">MHDA network compatibility matrix</caption>
+                <thead>
+                <tr>
+                    <th scope="col"><code>nt</code></th>
+                    <th scope="col">SLIP-44</th>
+                    <th scope="col">Algorithms</th>
+                    <th scope="col">Formats</th>
+                    <th scope="col">Derivations</th>
+                    <th scope="col">Defaults</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr><th scope="row">bitcoin</th><td>0</td><td>secp256k1</td><td class="is-wrap">p2pkh, p2sh, p2wpkh, p2wsh, p2tr, bech32, bech32m</td><td class="is-wrap">bip32, bip44, bip49, bip84, bip86</td><td>secp256k1</td></tr>
+                <tr><th scope="row">evm</th><td>60</td><td>secp256k1</td><td>hex</td><td>bip32, bip44</td><td>secp256k1, hex</td></tr>
+                <tr><th scope="row">avalanche</th><td>9000</td><td>secp256k1</td><td>hex, bech32</td><td>bip44</td><td>secp256k1</td></tr>
+                <tr><th scope="row">tron</th><td>195</td><td>secp256k1</td><td>base58</td><td>bip44</td><td>secp256k1, base58</td></tr>
+                <tr><th scope="row">cosmos</th><td>118</td><td>secp256k1, ed25519</td><td>bech32</td><td>bip44, cip11</td><td>secp256k1, bech32</td></tr>
+                <tr><th scope="row">solana</th><td>501</td><td>ed25519</td><td>base58</td><td>slip10</td><td>ed25519, base58</td></tr>
+                <tr><th scope="row">xrpl</th><td>144</td><td>secp256k1, ed25519</td><td>base58</td><td>bip44</td><td>secp256k1, base58</td></tr>
+                <tr><th scope="row">stellar</th><td>148</td><td>ed25519</td><td>strkey</td><td>slip10</td><td>ed25519, strkey</td></tr>
+                <tr><th scope="row">near</th><td>397</td><td>ed25519, secp256k1</td><td>hex</td><td>slip10, bip44</td><td>ed25519, hex</td></tr>
+                <tr><th scope="row">aptos</th><td>637</td><td>ed25519, secp256k1</td><td>hex</td><td>slip10, bip44</td><td>ed25519, hex</td></tr>
+                <tr><th scope="row">sui</th><td>784</td><td class="is-wrap">ed25519, secp256k1, secp256r1</td><td>hex</td><td>slip10, bip54, bip74</td><td>ed25519, hex</td></tr>
+                <tr><th scope="row">cardano</th><td>1815</td><td>ed25519</td><td>bech32, base58</td><td>cip1852</td><td>ed25519, bech32</td></tr>
+                <tr><th scope="row">algorand</th><td>283</td><td>ed25519</td><td>base32</td><td>slip10</td><td>ed25519, base32</td></tr>
+                <tr><th scope="row">ton</th><td>607</td><td>ed25519</td><td>base64url, hex</td><td>slip10</td><td>ed25519, base64url</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="is-size-7 mt-3">
+            Derivation types: <code>root</code>, <code>bip32</code>, <code>bip44</code>, <code>bip49</code>,
+            <code>bip54</code>, <code>bip74</code>, <code>bip84</code>, <code>bip86</code>, <code>slip10</code>
+            (variable length), <code>cip11</code>, <code>cip1852</code>, <code>zip32</code>. Each path is checked
+            against the template of its type. Per-network notes are in
+            <a href="https://github.com/censync/go-mhda/blob/v1.1.0/SPEC.md#2-network-catalogue" rel="noopener">SPEC §2</a>.
+        </p>
+    </div>
+</section>
+
+<!-- Examples -->
+<section class="section" id="examples" aria-labelledby="examples-title">
+    <div class="container">
+        <span class="eyebrow">Examples</span>
+        <h2 class="title is-3" id="examples-title">MHDA URNs by network</h2>
+        <div class="table-container">
+            <table class="table is-fullwidth is-hoverable">
+                <caption class="is-sr-only">Example MHDA URNs</caption>
+                <thead>
+                <tr><th scope="col">Network</th><th scope="col">Example URN</th></tr>
+                </thead>
+                <tbody>
+                <tr><th scope="row">Ethereum</th><td><code>urn:mhda:nt:evm:ci:1:dt:bip44:dp:m/44'/60'/0'/0/0</code></td></tr>
+                <tr><th scope="row">Bitcoin (BIP-86)</th><td><code>urn:mhda:nt:bitcoin:ci:bitcoin:dt:bip86:dp:m/86'/0'/0'/0/0:af:bech32m:ap:bc1p</code></td></tr>
+                <tr><th scope="row">Solana</th><td><code>urn:mhda:nt:solana:ci:mainnet:dt:slip10:dp:m/44'/501'/0'/0'</code></td></tr>
+                <tr><th scope="row">Stellar</th><td><code>urn:mhda:nt:stellar:ci:mainnet:dt:slip10:dp:m/44'/148'/0'</code></td></tr>
+                <tr><th scope="row">Sui (ed25519)</th><td><code>urn:mhda:nt:sui:ci:mainnet:dt:slip10:dp:m/44'/784'/0'/0'/0'</code></td></tr>
+                <tr><th scope="row">Cardano</th><td><code>urn:mhda:nt:cardano:ci:mainnet:dt:cip1852:dp:m/1852'/1815'/0'/0/0</code></td></tr>
+                <tr><th scope="row">Cosmos</th><td><code>urn:mhda:nt:cosmos:ci:cosmoshub:dt:cip11:dp:m/44'/118'/0'/0/0</code></td></tr>
+                <tr><th scope="row">Algorand</th><td><code>urn:mhda:nt:algorand:ci:mainnet</code> <span class="role">non-HD</span></td></tr>
+                <tr><th scope="row">TON</th><td><code>urn:mhda:nt:ton:ci:mainnet</code> <span class="role">non-HD, friendly base64url by default</span></td></tr>
+                <tr><th scope="row">EVM short form</th><td><code>urn:mhda:nt:evm:ci:1</code> <span class="role">defaults: secp256k1, hex</span></td></tr>
+                <tr><th scope="row">With metadata</th><td><code>urn:mhda:nt:evm:ci:1:ct:60</code> <span class="role">optional SLIP-44 annotation</span></td></tr>
+                <tr><th scope="row">Wallet-bound</th><td><code>urn:mhda:nt:ton:ci:mainnet:wt:tonconnect:wi:c0a8f2d4-3b6e-4a51-9c7d-2f8e1a0b5c93</code></td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- Features -->
+<section class="section is-alt" id="features" aria-labelledby="features-title">
+    <div class="container">
+        <span class="eyebrow">Libraries</span>
+        <h2 class="title is-3" id="features-title">What the libraries give you</h2>
+        <div class="columns is-multiline">
+            <div class="column is-6-tablet is-4-desktop">
+                <div class="card feature-card"><div class="card-content">
+                    <span class="icon is-medium"><i class="fas fa-list-check fa-lg" aria-hidden="true"></i></span>
+                    <h3>Lenient and strict parsing</h3>
+                    <p>Lenient parsing checks structure: prefix, known keys and values, no duplicates, paths that match their type. Strict parsing also checks the (algorithm, format, derivation) combination against the network matrix.</p>
+                </div></div>
+            </div>
+            <div class="column is-6-tablet is-4-desktop">
+                <div class="card feature-card"><div class="card-content">
+                    <span class="icon is-medium"><i class="fas fa-key fa-lg" aria-hidden="true"></i></span>
+                    <h3>Chain keys</h3>
+                    <p><code>nt:evm:ci:1</code> is itself a parseable key for maps, caches and hashes. Chain keys are canonical-only: a pre-1.1 key that carries <code>ct</code> fails loudly instead of being reinterpreted.</p>
+                </div></div>
+            </div>
+            <div class="column is-6-tablet is-4-desktop">
+                <div class="card feature-card"><div class="card-content">
+                    <span class="icon is-medium"><i class="fas fa-hashtag fa-lg" aria-hidden="true"></i></span>
+                    <h3>Content addressing</h3>
+                    <p><code>Hash256</code> and <code>NSSHash256</code> give a SHA-256 of the canonical form for deduplication and content addressing. SHA-1 variants are kept only for stable identifiers.</p>
+                </div></div>
+            </div>
+            <div class="column is-6-tablet is-4-desktop">
+                <div class="card feature-card"><div class="card-content">
+                    <span class="icon is-medium"><i class="fas fa-code fa-lg" aria-hidden="true"></i></span>
+                    <h3>Codecs out of the box</h3>
+                    <p>In Go, <code>Address</code> implements <code>TextMarshaler</code>, so JSON, XML and YAML encoding work unchanged; <code>MarshalText</code> writes the canonical URN.</p>
+                </div></div>
+            </div>
+            <div class="column is-6-tablet is-4-desktop">
+                <div class="card feature-card"><div class="card-content">
+                    <span class="icon is-medium"><i class="fas fa-triangle-exclamation fa-lg" aria-hidden="true"></i></span>
+                    <h3>Typed errors</h3>
+                    <p>Every failure wraps an exported sentinel: <code>errors.Is(err, mhda.ErrIncompatible)</code> in Go, <code>parse_error::code()</code> in C++. Messages are for people, codes are the contract.</p>
+                </div></div>
+            </div>
+            <div class="column is-6-tablet is-4-desktop">
+                <div class="card feature-card"><div class="card-content">
+                    <span class="icon is-medium"><i class="fas fa-shield-halved fa-lg" aria-hidden="true"></i></span>
+                    <h3>Fuzzed and sanitised</h3>
+                    <p>Go fuzz targets for URNs, NSS and paths. The C++ port runs 139 test cases and about 11,000 randomised iterations under AddressSanitizer, UBSan and LeakSanitizer.</p>
+                </div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Install -->
+<section class="section" id="install" aria-labelledby="install-title">
+    <div class="container">
+        <span class="eyebrow">Get started</span>
+        <h2 class="title is-3" id="install-title">Install and quick start</h2>
+
+        <div class="code-tabs">
+            <div class="tabs is-boxed">
+                <ul role="tablist" aria-label="Language">
+                    <li class="is-active"><a role="tab" id="tab-go" href="#panel-go" aria-controls="panel-go" aria-selected="true">Go</a></li>
+                    <li><a role="tab" id="tab-cpp" href="#panel-cpp" aria-controls="panel-cpp" aria-selected="false">C++17</a></li>
+                </ul>
+            </div>
+
+            <div role="tabpanel" id="panel-go" aria-labelledby="tab-go" tabindex="0">
+                <h3 class="tab-heading">Go</h3>
+                <div class="code-block"><pre><code>go get github.com/censync/go-mhda</code></pre></div>
+                <div class="code-block"><pre><code>import (
+    "errors"
+    "fmt"
+
+    mhda "github.com/censync/go-mhda"
+)
+
+func main() {
+    // Lenient parsing: structural validation only.
+    addr, err := mhda.ParseURN("urn:mhda:nt:evm:ci:1")
+    if err != nil {
+        panic(err)
+    }
+    fmt.Println(addr.Chain().NetworkType()) // evm
+    fmt.Println(addr.Algorithm())           // secp256k1 (default for evm)
+    fmt.Println(addr.Format())              // hex (default for evm)
+
+    // Strict parsing: also checks the (network, algorithm, format,
+    // derivation) combination is in the known-good compatibility matrix.
+    if _, err := mhda.ParseURNStrict("urn:mhda:nt:evm:ci:1:aa:ed25519"); err != nil {
+        if errors.Is(err, mhda.ErrIncompatible) {
+            fmt.Println("evm + ed25519 rejected, as expected")
+        }
+    }
+
+    // The chain identity (nt, ci) is itself a parseable key.
+    key := addr.Chain().Key() // "nt:evm:ci:1"
+    chain, _ := mhda.ChainFromKey(key)
+    _ = chain
+
+    // Optional wallet context: client type + wallet instance id.
+    wallet, _ := mhda.ParseURN("urn:mhda:nt:evm:ci:1:wt:web3:wi:5f2a8c31")
+    fmt.Println(wallet.WalletType(), wallet.WalletId()) // web3 5f2a8c31
+}</code></pre></div>
+                <p class="panel-note">Go 1.18+. API reference on <a href="https://pkg.go.dev/github.com/censync/go-mhda" rel="noopener">pkg.go.dev</a>.</p>
+            </div>
+
+            <div role="tabpanel" id="panel-cpp" aria-labelledby="tab-cpp" tabindex="0">
+                <h3 class="tab-heading">C++17</h3>
+                <div class="code-block"><pre><code>include(FetchContent)
+FetchContent_Declare(mhda
+    GIT_REPOSITORY https://github.com/censync/mhda.git
+    GIT_TAG        v1.1.0
+)
+FetchContent_MakeAvailable(mhda)
+target_link_libraries(my_app PRIVATE mhda::mhda)</code></pre></div>
+                <div class="code-block"><pre><code>#include &lt;iostream&gt;
+#include "mhda/mhda.hpp"
+
+int main() {
+    using namespace mhda;
+
+    // Lenient parsing: structural validation only.
+    auto addr = parse_urn("urn:mhda:nt:evm:ci:1");
+    std::cout &lt;&lt; addr.get_chain().network().str() &lt;&lt; "\n";  // evm
+    std::cout &lt;&lt; addr.resolved_algorithm().str() &lt;&lt; "\n";   // secp256k1
+    std::cout &lt;&lt; addr.resolved_format().str() &lt;&lt; "\n";      // hex
+
+    // Strict parsing also checks the (network, algorithm, format, derivation)
+    // combination is in the known-good compatibility matrix.
+    try {
+        parse_urn_strict("urn:mhda:nt:evm:ci:1:aa:ed25519");
+    } catch (const parse_error&amp; e) {
+        if (e.code() == error_code::incompatible) {
+            std::cout &lt;&lt; "evm + ed25519 rejected, as expected\n";
+        }
+    }
+
+    // Hashing for content-addressing or deduplication.
+    auto bip = parse_urn("urn:mhda:nt:evm:ci:1:dt:bip44:dp:m/44'/60'/0'/0/0");
+    std::cout &lt;&lt; bip.hash256() &lt;&lt; "\n";   // SHA-256 hex
+}</code></pre></div>
+                <p class="panel-note">C++17, CMake 3.14+, no external runtime dependencies. Also installable with <code>cmake --install</code> and <code>find_package(mhda)</code>.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Repositories -->
+<section class="section is-alt" id="repositories" aria-labelledby="repos-title">
+    <div class="container">
+        <span class="eyebrow">Source code</span>
+        <h2 class="title is-3" id="repos-title">GitHub repositories and packages</h2>
+        <p class="mb-5 section-lead">
+            <strong>go-mhda</strong> is the normative reference: the specification lives there and changes land there
+            first. <strong>mhda</strong> is a faithful C++17 port that keeps the URN format and validation rules
+            bit-identical, so a URN produced by either implementation parses and round-trips through the other.
+            Both are MIT-licensed; the current release is 1.1.0.
+        </p>
+        <div class="table-container">
+            <table class="table is-fullwidth is-hoverable is-striped">
+                <caption class="is-sr-only">MHDA repositories, packages and install commands</caption>
+                <thead>
+                <tr>
+                    <th scope="col">Language</th>
+                    <th scope="col">GitHub repository</th>
+                    <th scope="col">Package</th>
+                    <th scope="col">Install</th>
+                    <th scope="col">Release</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">Go<span class="role">reference implementation and specification</span></th>
+                    <td><a href="https://github.com/censync/go-mhda" rel="noopener">censync/go-mhda</a></td>
+                    <td><a href="https://pkg.go.dev/github.com/censync/go-mhda" rel="noopener">pkg.go.dev <code>github.com/censync/go-mhda</code></a></td>
+                    <td><code>go get github.com/censync/go-mhda</code></td>
+                    <td><a href="https://github.com/censync/go-mhda/releases/tag/v1.1.0" rel="noopener">v1.1.0</a></td>
+                </tr>
+                <tr>
+                    <th scope="row">C++17<span class="role">port of go-mhda</span></th>
+                    <td><a href="https://github.com/censync/mhda" rel="noopener">censync/mhda</a></td>
+                    <td><span class="is-wrap">CMake <code>mhda::mhda</code></span><br><a href="https://github.com/censync/mhda/releases" rel="noopener">GitHub Releases</a></td>
+                    <td><span class="is-wrap">CMake <code>FetchContent</code> or <code>find_package(mhda)</code></span></td>
+                    <td><a href="https://github.com/censync/mhda/releases/tag/v1.1.0" rel="noopener">v1.1.0</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="columns is-variable is-6 mt-5">
+            <div class="column is-6">
+                <h3 class="title is-5">Documentation</h3>
+                <ul class="content">
+                    <li><a href="https://github.com/censync/go-mhda/blob/v1.1.0/SPEC.md" rel="noopener">Specification</a>: components, networks, derivation types, formats, validation rules, errors, concurrency and known limitations.</li>
+                    <li><a href="https://github.com/censync/go-mhda/releases/tag/v1.1.0" rel="noopener">Release notes 1.1.0</a>: URN grammar 1.1 and migration from 1.0.</li>
+                    <li><a href="https://github.com/censync/mhda/blob/v1.1.0/CHANGELOG.md" rel="noopener">C++ changelog</a> and the <a href="https://github.com/censync/mhda#api-mapping-go--c" rel="noopener">Go → C++ API mapping</a>.</li>
+                </ul>
+            </div>
+            <div class="column is-6">
+                <h3 class="title is-5">Version 1.1</h3>
+                <p class="is-size-6">
+                    URN grammar 1.1 (4 July 2026) makes <code>(nt, ci)</code> the chain identity, turns the SLIP-44 coin
+                    type into optional metadata, adds the wallet domain and renames network types to the commonly
+                    accepted names (<code>bitcoin</code>, <code>tron</code>, <code>solana</code>…). It is a
+                    format-changing release: strings produced by 1.0.0 do not round-trip unchanged, and the release
+                    notes describe the migration.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Other products -->
+<section class="section" aria-labelledby="more-title">
+    <div class="container">
+        <h2 class="title is-4" id="more-title">More from CenSync</h2>
+        <div class="columns">
+            <div class="column is-6-desktop">
+                <a class="card product-card" href="/products/humanized-hash/">
+                    <div class="card-content">
+                        <div class="media">
+                            <div class="media-left"><img class="thumb" src="/assets/img/products/humanized-hash/sui-a.png" width="72" height="72" loading="lazy" alt=""></div>
+                            <div class="media-content">
+                                <h3 class="title is-5 mb-2">Humanized Hash (hh)</h3>
+                                <p>An address or a hash as a small deterministic picture to compare at a glance, against address poisoning and clipboard swaps.</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<footer class="footer has-background-dark has-text-light">
+    <div class="container">
+        <div class="columns is-multiline">
+            <div class="column is-12-mobile is-12-tablet is-4-desktop has-text-centered-mobile">
+                <p class="title is-5 has-text-light mb-3">
+                    <span class="icon-text">
+                        <span class="icon has-text-warning"><i class="fas fa-bolt" aria-hidden="true"></i></span>
+                        <span>CenSync</span>
+                    </span>
+                </p>
+                <p class="has-text-grey-light">
+                    Expert developers of distributed systems, secured blockchain solutions, and cutting-edge fintech
+                    applications.
+                </p>
+            </div>
+            <div class="column is-12-mobile is-4-tablet is-3-desktop has-text-centered-mobile">
+                <p class="title is-6 has-text-light mb-3">Quick Links</p>
+                <ul class="footer-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/#services">Services</a></li>
+                    <li><a href="/#solutions">Solutions</a></li>
+                    <li><a href="/#technologies">Technologies</a></li>
+                </ul>
+            </div>
+            <div class="column is-12-mobile is-4-tablet is-3-desktop has-text-centered-mobile">
+                <p class="title is-6 has-text-light mb-3">Products</p>
+                <ul class="footer-links">
+                    <li><a href="/products/">All products</a></li>
+                    <li><a href="/products/humanized-hash/">Humanized Hash (hh)</a></li>
+                    <li><a href="/products/mhda/">MHDA</a></li>
+                </ul>
+            </div>
+            <div class="column is-12-mobile is-4-tablet is-2-desktop has-text-centered-mobile">
+                <p class="title is-6 has-text-light mb-3">Connect</p>
+                <div class="social-links is-justify-content-center-mobile">
+                    <a href="https://github.com/censync" class="button is-dark is-small" rel="noopener" aria-label="CenSync on GitHub">
+                        <span class="icon"><i class="fab fa-github" aria-hidden="true"></i></span>
+                    </a>
+                    <a href="mailto:dev@censync.com" class="button is-dark is-small" aria-label="Email dev@censync.com">
+                        <span class="icon"><i class="fas fa-at" aria-hidden="true"></i></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <hr class="has-background-grey-dark">
+        <div class="content has-text-centered has-text-grey-light">
+            <p>© 2026 CenSync. Building the future of decentralized systems.</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

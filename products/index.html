@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en" class="has-navbar-fixed-top">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Open-source products: Humanized Hash and MHDA | CenSync</title>
+    <meta name="description" content="Open-source libraries by CenSync: Humanized Hash (hh), a visual hash against address poisoning, and MHDA, a URN format for multichain HD addresses. MIT.">
+    <meta name="keywords" content="CenSync, open source, Humanized Hash, MHDA, blockchain libraries, address poisoning, HD wallet, derivation path">
+    <meta name="author" content="CenSync">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <link rel="canonical" href="https://censync.com/products/">
+    <meta name="theme-color" content="#1a1a2e">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="CenSync">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:url" content="https://censync.com/products/">
+    <meta property="og:title" content="CenSync open-source products">
+    <meta property="og:description" content="Humanized Hash (hh), a picture of an address to compare at a glance, and MHDA, one URN for a multichain HD address. MIT-licensed libraries in C++, Go, Kotlin, TypeScript and Python.">
+    <meta property="og:image" content="https://censync.com/assets/img/products/og/products.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="CenSync open-source libraries: Humanized Hash (hh) and MHDA">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CenSync open-source products">
+    <meta name="twitter:description" content="Humanized Hash (hh), a picture of an address to compare at a glance, and MHDA, one URN for a multichain HD address. MIT-licensed libraries in C++, Go, Kotlin, TypeScript and Python.">
+    <meta name="twitter:image" content="https://censync.com/assets/img/products/og/products.png">
+    <meta name="twitter:image:alt" content="CenSync open-source libraries: Humanized Hash (hh) and MHDA">
+
+    <!-- Icons -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='75' font-size='80'%3E⚡%3C/text%3E%3C/svg%3E">
+    <link rel="manifest" href="/manifest.json">
+
+    <!-- Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&amp;display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css" integrity="sha384-DCY3M8xLkMu6c9IKcKbe+jHKMjelnwC0p+SBaxfHxoBYZWdJF2X400UdBCgATtAB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha384-iw3OoTErCYJJB9mCa8LNS2hbsQ7M3C0EpIsO/H5+EGAkPGc6rk+V8i04oW/K5xq0" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/css/products.css?v=e14db0e7b2">
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://censync.com/#organization",
+      "name": "CenSync",
+      "url": "https://censync.com/",
+      "email": "dev@censync.com",
+      "sameAs": [
+        "https://github.com/censync"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://censync.com/#website",
+      "url": "https://censync.com/",
+      "name": "CenSync",
+      "publisher": {
+        "@id": "https://censync.com/#organization"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://censync.com/products/#webpage",
+      "url": "https://censync.com/products/",
+      "name": "Open-source products: Humanized Hash and MHDA | CenSync",
+      "description": "Open-source libraries by CenSync: Humanized Hash (hh), a visual hash against address poisoning, and MHDA, a URN format for multichain HD addresses. MIT.",
+      "isPartOf": {
+        "@id": "https://censync.com/#website"
+      },
+      "breadcrumb": {
+        "@id": "https://censync.com/products/#breadcrumb"
+      },
+      "inLanguage": "en",
+      "datePublished": "2026-09-29",
+      "dateModified": "2026-09-29",
+      "primaryImageOfPage": {
+        "@id": "https://censync.com/products/#primaryimage"
+      },
+      "about": {
+        "@id": "https://censync.com/#organization"
+      },
+      "mainEntity": {
+        "@id": "https://censync.com/products/#products"
+      }
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://censync.com/products/#primaryimage",
+      "url": "https://censync.com/assets/img/products/og/products.png",
+      "contentUrl": "https://censync.com/assets/img/products/og/products.png",
+      "width": 1200,
+      "height": 630,
+      "caption": "CenSync open-source libraries: Humanized Hash (hh) and MHDA"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://censync.com/products/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://censync.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Products",
+          "item": "https://censync.com/products/"
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://censync.com/products/#products",
+      "name": "CenSync open-source products",
+      "numberOfItems": 2,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "url": "https://censync.com/products/humanized-hash/",
+          "name": "Humanized Hash (hh)"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "url": "https://censync.com/products/mhda/",
+          "name": "MHDA"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B4X009BE1F"></script>
+    <script src="/assets/js/products.js?v=dd9725e141" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<nav class="navbar is-fixed-top is-dark" aria-label="Main navigation">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+                <span class="icon-text">
+                    <span class="icon has-text-warning"><i class="fas fa-bolt" aria-hidden="true"></i></span>
+                    <span class="has-text-weight-bold is-size-4">CenSync</span>
+                </span>
+            </a>
+            <button type="button" class="navbar-burger" aria-label="Menu" aria-expanded="false" aria-controls="navbarMenu" data-target="navbarMenu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </button>
+        </div>
+        <div id="navbarMenu" class="navbar-menu">
+            <div class="navbar-end">
+                <a class="navbar-item" href="/">Home</a>
+                <a class="navbar-item" href="/#services">Services</a>
+                <a class="navbar-item" href="/#solutions">Solutions</a>
+                <a class="navbar-item" href="/#technologies">Technologies</a>
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link is-active" href="/products/" aria-current="page">Products</a>
+                    <div class="navbar-dropdown is-right">
+                        <a class="navbar-item" href="/products/humanized-hash/">Humanized Hash (hh)</a>
+                        <a class="navbar-item" href="/products/mhda/">MHDA</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<main id="main">
+
+<section class="hero product-hero">
+    <div class="hero-body">
+        <div class="container">
+            <nav class="breadcrumb is-small mb-5" aria-label="Breadcrumb">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li class="is-active"><a href="/products/" aria-current="page">Products</a></li>
+                </ul>
+            </nav>
+            <span class="eyebrow">Open source · MIT</span>
+            <h1 class="title is-1">Open-source <span class="has-gradient-text">products</span></h1>
+            <p class="subtitle is-5 mt-4 section-lead">
+                Libraries and formats that CenSync publishes as open source on GitHub, under the MIT licence.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="section" aria-labelledby="list-title">
+    <div class="container">
+        <h2 class="is-sr-only" id="list-title">Products</h2>
+        <div class="columns is-variable is-6">
+            <div class="column is-6">
+                <article class="card product-card">
+                    <div class="card-content">
+                        <div class="media">
+                            <div class="media-left"><img class="thumb" src="/assets/img/products/humanized-hash/sui-a.png" width="72" height="72" alt="An hh picture: a 4 by 4 grid of coloured squares, circles and triangles"></div>
+                            <div class="media-content">
+                                <h3 class="title is-4 mb-1"><a href="/products/humanized-hash/">Humanized Hash (hh)</a></h3>
+                                <p class="is-size-7 has-text-grey">v1.1.0 · C++ · Kotlin/Java · TypeScript · Go · Python</p>
+                            </div>
+                        </div>
+                        <p>
+                            An address, a public key or a hash as a small deterministic picture that a person can compare
+                            at a glance. Made to catch address poisoning and clipboard substitution. The same pictures,
+                            byte for byte, in five languages, with no dependencies and colours chosen for colour vision
+                            deficiency.
+                        </p>
+                    </div>
+                    <footer class="card-footer">
+                        <a class="card-footer-item" href="/products/humanized-hash/">Overview</a>
+                        <a class="card-footer-item" href="/products/humanized-hash/#repositories">Packages</a>
+                        <a class="card-footer-item" href="https://github.com/censync/hh-cpp" rel="noopener">GitHub</a>
+                    </footer>
+                </article>
+            </div>
+            <div class="column is-6">
+                <article class="card product-card">
+                    <div class="card-content">
+                        <div class="media">
+                            <div class="media-left"><span class="thumb thumb-mono" aria-hidden="true">urn:</span></div>
+                            <div class="media-content">
+                                <h3 class="title is-4 mb-1"><a href="/products/mhda/">MHDA</a></h3>
+                                <p class="is-size-7 has-text-grey">v1.1.0 · Go · C++17</p>
+                            </div>
+                        </div>
+                        <p>
+                            MultiChain Hierarchical Deterministic Address: an RFC 8141 URN that captures everything needed
+                            to identify a derived address, from network and derivation path to curve, encoding and wallet
+                            context. 14 networks, strict and lenient parsing.
+                        </p>
+                    </div>
+                    <footer class="card-footer">
+                        <a class="card-footer-item" href="/products/mhda/">Overview</a>
+                        <a class="card-footer-item" href="/products/mhda/#repositories">Packages</a>
+                        <a class="card-footer-item" href="https://github.com/censync/go-mhda" rel="noopener">GitHub</a>
+                    </footer>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section is-alt" id="repositories" aria-labelledby="repos-title">
+    <div class="container">
+        <h2 class="title is-3" id="repos-title">All repositories and packages</h2>
+        <div class="table-container">
+            <table class="table is-fullwidth is-hoverable is-striped">
+                <caption class="is-sr-only">CenSync open-source repositories and packages</caption>
+                <thead>
+                <tr><th scope="col">Product</th><th scope="col">Language</th><th scope="col">GitHub repository</th><th scope="col">Package</th></tr>
+                </thead>
+                <tbody>
+                <tr><th scope="row" rowspan="5"><a href="/products/humanized-hash/">Humanized Hash</a></th><td>C++17 <span class="role">reference</span></td><td><a href="https://github.com/censync/hh-cpp" rel="noopener">censync/hh-cpp</a></td><td><a href="https://github.com/censync/hh-cpp/releases" rel="noopener">GitHub Releases</a></td></tr>
+                <tr><td>Kotlin and Java</td><td><a href="https://github.com/censync/hh-kotlin" rel="noopener">censync/hh-kotlin</a></td><td><a href="https://central.sonatype.com/artifact/io.github.censync/hh" rel="noopener">Maven Central <code>io.github.censync:hh</code></a></td></tr>
+                <tr><td>TypeScript and JavaScript</td><td><a href="https://github.com/censync/hh-ts" rel="noopener">censync/hh-ts</a></td><td><a href="https://www.npmjs.com/package/@censync/hh" rel="noopener">npm <code>@censync/hh</code></a></td></tr>
+                <tr><td>Go</td><td><a href="https://github.com/censync/go-hh" rel="noopener">censync/go-hh</a></td><td><a href="https://pkg.go.dev/github.com/censync/go-hh" rel="noopener">pkg.go.dev</a></td></tr>
+                <tr><td>Python</td><td><a href="https://github.com/censync/hh-python" rel="noopener">censync/hh-python</a></td><td><a href="https://pypi.org/project/humanized-hash/" rel="noopener">PyPI <code>humanized-hash</code></a></td></tr>
+                <tr><th scope="row" rowspan="2"><a href="/products/mhda/">MHDA</a></th><td>Go <span class="role">reference</span></td><td><a href="https://github.com/censync/go-mhda" rel="noopener">censync/go-mhda</a></td><td><a href="https://pkg.go.dev/github.com/censync/go-mhda" rel="noopener">pkg.go.dev</a></td></tr>
+                <tr><td>C++17</td><td><a href="https://github.com/censync/mhda" rel="noopener">censync/mhda</a></td><td><a href="https://github.com/censync/mhda/releases" rel="noopener">GitHub Releases</a></td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="mt-4">More projects on <a href="https://github.com/censync" rel="noopener">github.com/censync</a>. Questions: <a href="mailto:dev@censync.com">dev@censync.com</a>.</p>
+    </div>
+</section>
+
+</main>
+
+<footer class="footer has-background-dark has-text-light">
+    <div class="container">
+        <div class="columns is-multiline">
+            <div class="column is-12-mobile is-12-tablet is-4-desktop has-text-centered-mobile">
+                <p class="title is-5 has-text-light mb-3">
+                    <span class="icon-text">
+                        <span class="icon has-text-warning"><i class="fas fa-bolt" aria-hidden="true"></i></span>
+                        <span>CenSync</span>
+                    </span>
+                </p>
+                <p class="has-text-grey-light">
+                    Expert developers of distributed systems, secured blockchain solutions, and cutting-edge fintech
+                    applications.
+                </p>
+            </div>
+            <div class="column is-12-mobile is-4-tablet is-3-desktop has-text-centered-mobile">
+                <p class="title is-6 has-text-light mb-3">Quick Links</p>
+                <ul class="footer-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/#services">Services</a></li>
+                    <li><a href="/#solutions">Solutions</a></li>
+                    <li><a href="/#technologies">Technologies</a></li>
+                </ul>
+            </div>
+            <div class="column is-12-mobile is-4-tablet is-3-desktop has-text-centered-mobile">
+                <p class="title is-6 has-text-light mb-3">Products</p>
+                <ul class="footer-links">
+                    <li><a href="/products/">All products</a></li>
+                    <li><a href="/products/humanized-hash/">Humanized Hash (hh)</a></li>
+                    <li><a href="/products/mhda/">MHDA</a></li>
+                </ul>
+            </div>
+            <div class="column is-12-mobile is-4-tablet is-2-desktop has-text-centered-mobile">
+                <p class="title is-6 has-text-light mb-3">Connect</p>
+                <div class="social-links is-justify-content-center-mobile">
+                    <a href="https://github.com/censync" class="button is-dark is-small" rel="noopener" aria-label="CenSync on GitHub">
+                        <span class="icon"><i class="fab fa-github" aria-hidden="true"></i></span>
+                    </a>
+                    <a href="mailto:dev@censync.com" class="button is-dark is-small" aria-label="Email dev@censync.com">
+                        <span class="icon"><i class="fas fa-at" aria-hidden="true"></i></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <hr class="has-background-grey-dark">
+        <div class="content has-text-centered has-text-grey-light">
+            <p>© 2026 CenSync. Building the future of decentralized systems.</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
