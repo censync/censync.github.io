@@ -23,15 +23,20 @@
     <meta property="og:description"
           content="Expert development of distributed systems, blockchain solutions, and fintech applications. Building the future of decentralized systems.">
     <meta property="og:image" content="https://censync.com/og-image.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="CenSync: Blockchain &amp; Distributed Systems Development">
     <meta property="og:site_name" content="CenSync">
+    <meta property="og:locale" content="en_US">
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://censync.com/">
-    <meta property="twitter:title" content="CenSync - Blockchain & Distributed Systems Development">
-    <meta property="twitter:description"
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CenSync - Blockchain & Distributed Systems Development">
+    <meta name="twitter:description"
           content="Expert development of distributed systems, blockchain solutions, and fintech applications. Building the future of decentralized systems.">
-    <meta property="twitter:image" content="https://censync.com/og-image.png">
+    <meta name="twitter:image" content="https://censync.com/og-image.png">
+    <meta name="twitter:image:alt" content="CenSync: Blockchain &amp; Distributed Systems Development">
 
     <!-- Additional Meta Tags -->
     <meta name="theme-color" content="#ffd200">
@@ -40,14 +45,14 @@
 
     <!-- Favicon & Manifest -->
     <link rel="manifest" href="/manifest.json">
-    <link rel="icon" type="image/svg+xml"
-          href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='75' font-size='80'%3E⚡%3C/text%3E%3C/svg%3E">
-    <link rel="apple-touch-icon" href="/icon-192.png">
+    <link rel="icon" href="/favicon.ico" sizes="48x48">
+    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&amp;display=swap"
           rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
@@ -103,6 +108,16 @@
             color: #ffd200 !important
         }
 
+        .navbar-link {
+            font-weight: 400;
+            letter-spacing: 0.01em;
+            transition: color var(--animation-speed) ease
+        }
+
+        .navbar-link:hover {
+            color: #ffd200 !important
+        }
+
         .navbar-menu {
             box-shadow: none
         }
@@ -112,8 +127,18 @@
                 background-color: #1a1a2e
             }
 
-            .navbar-item {
+            .navbar-item, .navbar-link {
                 color: #fff !important
+            }
+
+            .navbar-dropdown {
+                background-color: transparent;
+                box-shadow: none;
+                padding-left: 1rem
+            }
+
+            .navbar-dropdown .navbar-item:not(.is-active, .is-selected) {
+                background-color: transparent
             }
         }
 
@@ -668,18 +693,26 @@
                 <a class="navbar-item" href="#services">Services</a>
                 <a class="navbar-item" href="#solutions">Solutions</a>
                 <a class="navbar-item" href="#technologies">Technologies</a>
-                <a class="navbar-item" href="/products/">Products</a>
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link" href="/products/">Products</a>
+                    <div class="navbar-dropdown is-right">
+                        <a class="navbar-item" href="/products/humanized-hash/">Humanized Hash (hh)</a>
+                        <a class="navbar-item" href="/products/mhda/">MHDA</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </nav>
+
+<main id="home">
 
 <!-- Services Section -->
 <section id="services" class="section is-medium py-6-mobile">
     <div class="container">
         <div class="has-text-centered mb-6 px-4-mobile">
             <br />
-            <h2 class="title is-2 has-text-weight-bold is-size-3-mobile">CenSync</h2>
+            <h1 class="title is-2 has-text-weight-bold is-size-3-mobile">CenSync</h1>
             <p class="subtitle is-5 has-text-grey is-size-6-mobile">
                 Comprehensive blockchain and distributed systems development <br />
                 Contact us: <a href="#" onclick="window.location.href='mailto:dev@censync.com';return false;">dev@censync.com</a>
@@ -756,9 +789,9 @@
                             <span class="tag is-success is-light">Analytics</span>
                         </div>
                     </div>
+                </article>
             </div>
         </div>
-    </div>
     </div>
 </section>
 
@@ -1119,6 +1152,7 @@
     </div>
 </section>
 
+</main>
 
 <!-- Footer -->
 <footer class="footer has-background-dark has-text-light">
@@ -1160,7 +1194,7 @@
                     </a>
                     <a href="#" onclick="window.location.href='mailto:dev@censync.com';return false;" class="button is-dark is-small">
                             <span class="icon">
-                                <i class="fab fa-at"></i>
+                                <i class="fas fa-at"></i>
                             </span>
                     </a>
                 </div>
@@ -1187,16 +1221,19 @@
     {
         "@context": "https://schema.org",
         "@type": "Organization",
+        "@id": "https://censync.com/#organization",
         "name": "CenSync",
-        "url": "https://censync.com",
-        "logo": "https://censync.com/logo.png",
-        "description": "Expert development of distributed systems, blockchain solutions, DEX/CEX platforms, crosschain bridges, and fintech applications.",
-        "email": "contact@censync.com",
-        "sameAs": [],
-        "address": {
-            "@type": "PostalAddress",
-            "addressCountry": "Global"
+        "url": "https://censync.com/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://censync.com/logo.png",
+            "width": 512,
+            "height": 512
         },
+        "image": "https://censync.com/og-image.png",
+        "description": "Expert development of distributed systems, blockchain solutions, DEX/CEX platforms, crosschain bridges, and fintech applications.",
+        "email": "dev@censync.com",
+        "sameAs": ["https://github.com/censync"],
         "foundingDate": "2024",
         "knowsAbout": [
             "Blockchain Development",
@@ -1222,12 +1259,13 @@
     {
         "@context": "https://schema.org",
         "@type": "WebSite",
+        "@id": "https://censync.com/#website",
         "name": "CenSync",
-        "url": "https://censync.com",
+        "url": "https://censync.com/",
         "description": "Building the Future of Decentralized Systems",
+        "inLanguage": "en",
         "publisher": {
-            "@type": "Organization",
-            "name": "CenSync"
+            "@id": "https://censync.com/#organization"
         }
     }
 </script>
@@ -1236,12 +1274,13 @@
     {
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
+        "@id": "https://censync.com/#service",
         "name": "CenSync",
+        "url": "https://censync.com/",
         "image": "https://censync.com/logo.png",
         "description": "Expert development of distributed systems, blockchain solutions, and fintech applications",
-        "address": {
-            "@type": "PostalAddress",
-            "addressCountry": "Global"
+        "parentOrganization": {
+            "@id": "https://censync.com/#organization"
         },
         "priceRange": "$$$$",
         "areaServed": "Worldwide",
@@ -1338,8 +1377,10 @@
         o.observe(el)
     });
 
-    // Contact Form
-    document.getElementById('contactForm').addEventListener('submit', async e => {
+    // Contact Form (the page has none at the moment; without this guard the
+    // error stopped the navbar and particle scripts below)
+    const contactForm = document.getElementById('contactForm');
+    contactForm && contactForm.addEventListener('submit', async e => {
         e.preventDefault();
         const b = e.target.querySelector('button[type="submit"]'), t = b.innerHTML;
         b.disabled = true;

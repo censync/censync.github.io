@@ -50,7 +50,10 @@ body {
 .navbar-burger { height: 3.25rem; width: 3.25rem; }
 @media screen and (max-width: 1023px) {
     .navbar-menu { background-color: var(--cs-ink); box-shadow: none; }
-    .navbar-item { color: #fff !important; }
+    .navbar-item, .navbar-link { color: #fff !important; }
+    .navbar-dropdown { background-color: transparent; box-shadow: none; padding-left: 1rem; }
+    .navbar-dropdown .navbar-item:not(.is-active, .is-selected) { background-color: transparent; }
+    .navbar-dropdown .navbar-item.is-active { background-color: rgba(255, 255, 255, 0.06); }
 }
 
 /* --- Typography --- */

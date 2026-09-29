@@ -1,0 +1,39 @@
+# CenSync
+
+> CenSync develops distributed systems, blockchain infrastructure and fintech applications, and publishes MIT-licensed open-source libraries: Humanized Hash (hh), a visual hash that helps people catch address poisoning and clipboard substitution, and MHDA, a URN format for multichain HD addresses.
+
+Contact: dev@censync.com. Source code: https://github.com/censync
+
+Services described on https://censync.com/: distributed systems, blockchain solutions (nodes, cross-chain bridges, custom protocols), fintech solutions (algorithmic trading systems, market data pipelines), DEX and CEX platforms, cross-chain solutions, ETL and data engineering.
+
+## Products
+
+- [Humanized Hash (hh)](https://censync.com/products/humanized-hash/): turns a blockchain address, a public key or any hash into a small deterministic 4 x 4 picture of squares, circles and triangles in four colour-blind-safe colours, plus a six-character tag such as `TKS-PVH`. Universal and keyed (per-wallet secret) modes. Same output byte for byte in C++, Kotlin/Java, TypeScript/JavaScript, Go and Python; no dependencies; version 1.1.0.
+- [MHDA](https://censync.com/products/mhda/): MultiChain Hierarchical Deterministic Address, an RFC 8141 URN such as `urn:mhda:nt:bitcoin:ci:bitcoin:dt:bip86:dp:m/86'/0'/0'/0/0:af:bech32m:ap:bc1p` that captures network, chain ID, derivation type and path, signature algorithm, address format and an optional wallet context. 14 networks; Go reference implementation and C++17 port; version 1.1.0.
+- [All products](https://censync.com/products/): overview with every repository and package.
+
+## Humanized Hash documentation
+
+- [README (hh-cpp)](https://raw.githubusercontent.com/censync/hh-cpp/v1.1.0/README.md): overview, implementations table, forgery-cost table, quick start in C++.
+- [Specification](https://raw.githubusercontent.com/censync/hh-cpp/v1.1.0/docs/SPEC.md): the algorithm, encoders and error codes every implementation follows.
+- [Security model](https://raw.githubusercontent.com/censync/hh-cpp/v1.1.0/docs/SECURITY.md): what a picture proves and what it does not, universal vs keyed mode, forgery cost.
+- [Integration guide](https://raw.githubusercontent.com/censync/hh-cpp/v1.1.0/docs/INTEGRATION.md): sizes, placement and product rules.
+
+## Humanized Hash packages
+
+- [hh-cpp](https://github.com/censync/hh-cpp): C++17 with a C ABI, the reference implementation with the specification and golden vectors; CMake `FetchContent` or `find_package(hh)`.
+- [hh-kotlin](https://raw.githubusercontent.com/censync/hh-kotlin/v1.1.0/README.md): Kotlin and Java, JVM and Android; Maven Central `io.github.censync:hh`.
+- [hh-ts](https://raw.githubusercontent.com/censync/hh-ts/v1.1.0/README.md): TypeScript and JavaScript for browsers, Node.js, Deno and Bun; npm `@censync/hh`.
+- [go-hh](https://raw.githubusercontent.com/censync/go-hh/v1.1.0/README.md): Go; `go get github.com/censync/go-hh`.
+- [hh-python](https://raw.githubusercontent.com/censync/hh-python/v1.1.0/README.md): Python 3.9+; PyPI `humanized-hash`.
+
+## MHDA documentation and packages
+
+- [Specification](https://raw.githubusercontent.com/censync/go-mhda/v1.1.0/SPEC.md): URN components, network catalogue, derivation types, formats, validation rules, errors, concurrency and known limitations.
+- [go-mhda](https://raw.githubusercontent.com/censync/go-mhda/v1.1.0/README.md): Go reference implementation; `go get github.com/censync/go-mhda`.
+- [mhda](https://raw.githubusercontent.com/censync/mhda/v1.1.0/README.md): C++17 port with a bit-identical URN format; CMake target `mhda::mhda`.
+
+## Optional
+
+- [Wallet address spoofing attacks: Nobody reads 42 characters](https://medium.com/@censync_dev/nobody-reads-42-characters-6b84726faff0): article on address poisoning, clipboard hijackers and the design of Humanized Hash, 23 September 2026.
+- [Sitemap](https://censync.com/sitemap.xml)

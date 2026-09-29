@@ -6,6 +6,9 @@
         <lastmod>2026-09-29</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://censync.com/og-image.png</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://censync.com/products/</loc>
