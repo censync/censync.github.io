@@ -91,7 +91,7 @@
       },
       "inLanguage": "en",
       "datePublished": "2026-09-29",
-      "dateModified": "2026-09-29",
+      "dateModified": "2026-10-05",
       "primaryImageOfPage": {
         "@id": "https://censync.com/products/mhda/#primaryimage"
       },
@@ -153,7 +153,7 @@
           "name": "C++"
         }
       ],
-      "version": "1.1.0",
+      "version": "1.2.0",
       "license": "https://opensource.org/licenses/MIT",
       "isAccessibleForFree": true,
       "keywords": [
@@ -187,7 +187,7 @@
       "subjectOf": {
         "@type": "TechArticle",
         "headline": "MHDA Specification",
-        "url": "https://github.com/censync/go-mhda/blob/v1.1.0/SPEC.md"
+        "url": "https://github.com/censync/go-mhda/blob/v1.2.0/SPEC.md"
       }
     },
     {
@@ -203,7 +203,7 @@
         }
       ],
       "runtimePlatform": "Go 1.18+",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "license": "https://opensource.org/licenses/MIT",
       "publisher": {
         "@id": "https://censync.com/#organization"
@@ -231,7 +231,7 @@
         }
       ],
       "runtimePlatform": "C++17",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "license": "https://opensource.org/licenses/MIT",
       "publisher": {
         "@id": "https://censync.com/#organization"
@@ -308,7 +308,7 @@
             </nav>
             <div class="columns is-vcentered is-variable is-8">
                 <div class="column is-12-tablet is-6-desktop">
-                    <span class="eyebrow">Open-source format and libraries · v1.1.0</span>
+                    <span class="eyebrow">Open-source format and libraries · v1.2.0</span>
                     <h1 class="title is-1">MHDA <span class="has-gradient-text is-block is-size-3 mt-2">MultiChain Hierarchical Deterministic Address</span></h1>
                     <p class="subtitle is-5 mt-4">
                         A URN-based descriptor for blockchain HD addresses, compatible with
@@ -329,7 +329,7 @@
                         <a class="button is-ghost-light" href="https://github.com/censync/go-mhda" rel="noopener">
                             <span class="icon"><i class="fab fa-github" aria-hidden="true"></i></span><span>GitHub</span>
                         </a>
-                        <a class="button is-ghost-light" href="https://github.com/censync/go-mhda/blob/v1.1.0/SPEC.md" rel="noopener">
+                        <a class="button is-ghost-light" href="https://github.com/censync/go-mhda/blob/v1.2.0/SPEC.md" rel="noopener">
                             <span class="icon"><i class="fas fa-book" aria-hidden="true"></i></span><span>Specification</span>
                         </a>
                     </div>
@@ -395,14 +395,14 @@
                 <div class="card feature-card"><div class="card-content">
                     <span class="icon is-medium"><i class="fas fa-rotate fa-lg" aria-hidden="true"></i></span>
                     <h3>Exact round-trip</h3>
-                    <p>For canonical input <code>Parse(s).String() == s</code>. A short form round-trips to the same short form, a long form to the same long form. Hardening markers <code>'</code>, <code>H</code> and <code>h</code> are all accepted.</p>
+                    <p>For canonical input <code>Parse(s).String() == s</code>. A short form round-trips to the same short form, a long form to the same long form; an explicit <code>dt:root</code> folds into the short form. Hardening markers <code>'</code>, <code>H</code> and <code>h</code> are all accepted.</p>
                 </div></div>
             </div>
             <div class="column is-6-tablet is-4-desktop">
                 <div class="card feature-card"><div class="card-content">
                     <span class="icon is-medium"><i class="fas fa-wallet fa-lg" aria-hidden="true"></i></span>
                     <h3>Wallet domain</h3>
-                    <p><code>wt</code> names the client or protocol (<code>web3</code>, <code>tonconnect</code>), <code>wi</code> the wallet instance, e.g. a UUID or an HD root key fingerprint. Setters reject <code>:</code>, <code>?</code>, <code>#</code> and whitespace.</p>
+                    <p><code>wt</code> names the client or protocol (<code>web3</code>, <code>tonconnect</code>), <code>wi</code> the wallet instance, e.g. a UUID or an HD root key fingerprint. Values use the RFC 3986 characters of an NSS, so setters reject <code>:</code>, <code>?</code>, <code>#</code>, <code>%</code> and whitespace.</p>
                 </div></div>
             </div>
         </div>
@@ -416,7 +416,9 @@
         <h2 class="title is-3" id="networks-title">Supported networks</h2>
         <p class="mb-5 section-lead">
             Every network registers its algorithms, formats and derivation types. Strict validation requires the
-            resolved combination to be in this matrix; <code>root</code>, the non-HD form, is accepted on every network.
+            resolved combination to be in this matrix and derivable: ed25519 paths are fully hardened, Sui, Aptos and
+            NEAR tie each derivation type to its curve, and a Bitcoin address format must match the purpose of the path.
+            <code>root</code>, the non-HD form, is accepted on every network.
         </p>
         <div class="table-container">
             <table class="table is-fullwidth is-hoverable is-striped">
@@ -454,7 +456,7 @@
             <code>bip54</code>, <code>bip74</code>, <code>bip84</code>, <code>bip86</code>, <code>slip10</code>
             (variable length), <code>cip11</code>, <code>cip1852</code>, <code>zip32</code>. Each path is checked
             against the template of its type. Per-network notes are in
-            <a href="https://github.com/censync/go-mhda/blob/v1.1.0/SPEC.md#2-network-catalogue" rel="noopener">SPEC §2</a>.
+            <a href="https://github.com/censync/go-mhda/blob/v1.2.0/SPEC.md#2-network-catalogue" rel="noopener">SPEC §2</a>.
         </p>
     </div>
 </section>
@@ -499,7 +501,7 @@
                 <div class="card feature-card"><div class="card-content">
                     <span class="icon is-medium"><i class="fas fa-list-check fa-lg" aria-hidden="true"></i></span>
                     <h3>Lenient and strict parsing</h3>
-                    <p>Lenient parsing checks structure: prefix, known keys and values, no duplicates, paths that match their type. Strict parsing also checks the (algorithm, format, derivation) combination against the network matrix.</p>
+                    <p>Lenient parsing checks structure: prefix, <code>key:value</code> pairs with known keys and RFC 3986 values, no duplicates, paths that match their type with every index below 2<sup>31</sup>. Strict parsing also checks the (algorithm, format, derivation) combination against the network matrix and that the curve can derive the path.</p>
                 </div></div>
             </div>
             <div class="column is-6-tablet is-4-desktop">
@@ -534,7 +536,7 @@
                 <div class="card feature-card"><div class="card-content">
                     <span class="icon is-medium"><i class="fas fa-shield-halved fa-lg" aria-hidden="true"></i></span>
                     <h3>Fuzzed and sanitised</h3>
-                    <p>Go fuzz targets for URNs, NSS and paths. The C++ port runs 139 test cases and about 11,000 randomised iterations under AddressSanitizer, UBSan and LeakSanitizer.</p>
+                    <p>Go fuzz targets for URNs, NSS and paths. The C++ port runs 160 test cases under AddressSanitizer, UBSan and LeakSanitizer. Both suites share conformance tables, and differential runs check that the two give byte-identical results.</p>
                 </div></div>
             </div>
         </div>
@@ -600,7 +602,7 @@ func main() {
                 <div class="code-block"><pre><code>include(FetchContent)
 FetchContent_Declare(mhda
     GIT_REPOSITORY https://github.com/censync/mhda.git
-    GIT_TAG        v1.1.0
+    GIT_TAG        v1.2.0
 )
 FetchContent_MakeAvailable(mhda)
 target_link_libraries(my_app PRIVATE mhda::mhda)</code></pre></div>
@@ -645,7 +647,7 @@ int main() {
             <strong>go-mhda</strong> is the normative reference: the specification lives there and changes land there
             first. <strong>mhda</strong> is a faithful C++17 port that keeps the URN format and validation rules
             bit-identical, so a URN produced by either implementation parses and round-trips through the other.
-            Both are MIT-licensed; the current release is 1.1.0.
+            Both are MIT-licensed; the current release is 1.2.0.
         </p>
         <div class="table-container">
             <table class="table is-fullwidth is-hoverable is-striped">
@@ -665,14 +667,14 @@ int main() {
                     <td><a href="https://github.com/censync/go-mhda" rel="noopener">censync/go-mhda</a></td>
                     <td><a href="https://pkg.go.dev/github.com/censync/go-mhda" rel="noopener">pkg.go.dev <code>github.com/censync/go-mhda</code></a></td>
                     <td><code>go get github.com/censync/go-mhda</code></td>
-                    <td><a href="https://github.com/censync/go-mhda/releases/tag/v1.1.0" rel="noopener">v1.1.0</a></td>
+                    <td><a href="https://github.com/censync/go-mhda/releases/tag/v1.2.0" rel="noopener">v1.2.0</a></td>
                 </tr>
                 <tr>
                     <th scope="row">C++17<span class="role">port of go-mhda</span></th>
                     <td><a href="https://github.com/censync/mhda" rel="noopener">censync/mhda</a></td>
                     <td><span class="is-wrap">CMake <code>mhda::mhda</code></span><br><a href="https://github.com/censync/mhda/releases" rel="noopener">GitHub Releases</a></td>
                     <td><span class="is-wrap">CMake <code>FetchContent</code> or <code>find_package(mhda)</code></span></td>
-                    <td><a href="https://github.com/censync/mhda/releases/tag/v1.1.0" rel="noopener">v1.1.0</a></td>
+                    <td><a href="https://github.com/censync/mhda/releases/tag/v1.2.0" rel="noopener">v1.2.0</a></td>
                 </tr>
                 </tbody>
             </table>
@@ -682,19 +684,27 @@ int main() {
             <div class="column is-6">
                 <h3 class="title is-5">Documentation</h3>
                 <ul class="content">
-                    <li><a href="https://github.com/censync/go-mhda/blob/v1.1.0/SPEC.md" rel="noopener">Specification</a>: components, networks, derivation types, formats, validation rules, errors, concurrency and known limitations.</li>
+                    <li><a href="https://github.com/censync/go-mhda/blob/v1.2.0/SPEC.md" rel="noopener">Specification</a>: components, networks, derivation types, formats, validation rules, errors, concurrency and known limitations.</li>
+                    <li><a href="https://github.com/censync/go-mhda/releases/tag/v1.2.0" rel="noopener">Release notes 1.2.0</a>: the stricter grammar and validation, and which URNs no longer parse.</li>
                     <li><a href="https://github.com/censync/go-mhda/releases/tag/v1.1.0" rel="noopener">Release notes 1.1.0</a>: URN grammar 1.1 and migration from 1.0.</li>
-                    <li><a href="https://github.com/censync/mhda/blob/v1.1.0/CHANGELOG.md" rel="noopener">C++ changelog</a> and the <a href="https://github.com/censync/mhda#api-mapping-go--c" rel="noopener">Go → C++ API mapping</a>.</li>
+                    <li><a href="https://github.com/censync/mhda/blob/v1.2.0/CHANGELOG.md" rel="noopener">C++ changelog</a> and the <a href="https://github.com/censync/mhda#api-mapping-go--c" rel="noopener">Go → C++ API mapping</a>.</li>
                 </ul>
             </div>
             <div class="column is-6">
-                <h3 class="title is-5">Version 1.1</h3>
+                <h3 class="title is-5">Version 1.2</h3>
                 <p class="is-size-6">
-                    URN grammar 1.1 (4 July 2026) makes <code>(nt, ci)</code> the chain identity, turns the SLIP-44 coin
-                    type into optional metadata, adds the wallet domain and renames network types to the commonly
-                    accepted names (<code>bitcoin</code>, <code>tron</code>, <code>solana</code>…). It is a
-                    format-changing release: strings produced by 1.0.0 do not round-trip unchanged, and the release
-                    notes describe the migration.
+                    Version 1.2 (5 October 2026) refuses what could name the wrong key. A path level index of
+                    2<sup>31</sup> or more is rejected: it collided with the hardened bit, so
+                    <code>m/44'/60'/2147483648'/0/0</code> derived the key of <code>m/44'/60'/0'/0/0</code>. The NSS is
+                    parsed strictly as <code>key:value</code> pairs in the RFC 3986 character set, a path needs a
+                    derivation type, strict validation checks that the curve can derive the path, and values set in code
+                    are validated like parsed ones. URNs that 1.1 accepted with these defects no longer parse; the release
+                    notes list them.
+                </p>
+                <p class="is-size-6">
+                    Version 1.1 (4 July 2026) made <code>(nt, ci)</code> the chain identity, turned the SLIP-44 coin
+                    type into optional metadata, added the wallet domain and renamed network types to the commonly
+                    accepted names (<code>bitcoin</code>, <code>tron</code>, <code>solana</code>…).
                 </p>
             </div>
         </div>
